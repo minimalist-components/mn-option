@@ -2,7 +2,7 @@
 
 Minimalist input radio component, agnostic to framworks.
 
-<!-- See the [demo](http://codepen.io/darlanmendonca/full/xEwkaz) -->
+See the [demo](http://codepen.io/darlanmendonca/full/ZpQvLW)
 
 <!-- [![preview demo](https://raw.githubusercontent.com/minimalist-components/mn-radio/master/sources/example/mn-radio.gif)](http://codepen.io/darlanmendonca/full/akgXQq)  -->
 
