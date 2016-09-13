@@ -1,4 +1,4 @@
-# Minimalist input checkbox
+# Minimalist input radio
 
 Minimalist input radio component, agnostic to framworks.
 
