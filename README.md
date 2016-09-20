@@ -18,7 +18,7 @@ Or just download the main files ```dist/mn-radio.css, dist/mn-radio.js``` in you
 
 ```html
 <link rel="stylesheet" href="path/to/dist/mn-radio.css">
-<script src="path/to/dist/mn-radio.css"></script>
+<script src="path/to/dist/mn-radio.js"></script>
 ```
 
 ### Usage
