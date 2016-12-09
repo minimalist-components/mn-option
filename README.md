@@ -1,4 +1,4 @@
-# Minimalist input radio
+# mn-radio
 
 Minimalist input radio component, agnostic to framworks.
 
@@ -8,18 +8,11 @@ See the [demo](http://codepen.io/darlanmendonca/full/ZpQvLW)
 
 ### Install
 
-With bower
-
 ```sh
 bower install --save mn-radio
 ```
 
-Or just download the main files ```dist/mn-radio.css, dist/mn-radio.js``` in your project, and make a reference to their, like:
-
-```html
-<link rel="stylesheet" href="path/to/dist/mn-radio.css">
-<script src="path/to/dist/mn-radio.js"></script>
-```
+Or just download the main files, located in [dist/](https://github.com/minimalist-components/mn-radio/tree/master/dist)
 
 ### Usage
 
