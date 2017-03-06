@@ -1,0 +1,10 @@
+mn-radio {
+  &:after {
+    content: attr(placeholder);
+    position: absolute;
+    top: 50%;
+    left: 3em;
+    transform: translate(0, -50%);
+    pointer-events: none;
+  }
+}

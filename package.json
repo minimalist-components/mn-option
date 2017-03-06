@@ -39,6 +39,7 @@
     "require-all": "^2.0.0"
   },
   "dependencies": {
-    "document-register-element": "^1.4.1"
+    "document-register-element": "^1.4.1",
+    "open-color": "^1.4.2"
   }
 }

@@ -17,9 +17,15 @@ body
 
   .demo.mn-layout-fullscreen.mn-layout-centered
     .mn-layout-container
-      .mn-layout-row.align-center
-        mn-radio.flex(label='Female' name='gender')
-        mn-radio.flex(label='Male' name='gender')
+      .mn-layout-column
+        mn-radio.flex(placeholder='Female' name='gender')
+        mn-radio.flex(placeholder='Male' name='gender')
+
+      .mn-layout-column
+        mn-radio.flex(placeholder='Stark' name='house')
+        mn-radio.flex(placeholder='Targaryen' name='house')
+        mn-radio.flex(placeholder='Bolton' name='house')
+        mn-radio.flex(placeholder='Lannister' name='house')
 
   block scripts
     script(src='docs/vendor.js')

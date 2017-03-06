@@ -1,9 +1,9 @@
 class MnRadio extends HTMLElement {
   constructor(self) {
     self = super(self)
-    let element = this
+    const element = this
 
-    let inputAttributes = [
+    const inputAttributes = [
       {
         name: 'type',
         default: 'radio',
@@ -25,23 +25,14 @@ class MnRadio extends HTMLElement {
       },
     ]
 
-    // label element
-    let labelText = element.getAttribute('label')
-    let label = document.createElement('label')
-    let text = document.createElement('span')
-    if (labelText) {
-      text.textContent = element.getAttribute('disabled')
-        ? `${labelText} disabled`
-        : labelText
-    }
-    label.appendChild(text)
+    const label = document.createElement('label')
 
     // input element
-    let input = document.createElement('input')
+    const input = document.createElement('input')
     inputAttributes.map(setInputAttribute)
     label.appendChild(input)
 
-    let radio = document.createElement('div')
+    const radio = document.createElement('div')
     radio.className = 'radio'
     label.appendChild(radio)
     element.appendChild(label)

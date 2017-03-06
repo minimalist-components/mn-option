@@ -1,43 +1,15 @@
 mn-radio {
   position: relative;
-  margin: 2.5em .1em 0;
-  height: 2em;
   display: inline-block;
-  padding-bottom: .5em;
+
+  label {
+    display: block;
+    text-align: left;
+    cursor: pointer;
+    padding: 1em;
+  }
 
   input {
     display: none;
-  }
-
-  input:checked {
-    & + .radio {
-      background: red;//map-get($mn-primary-color, 900);
-
-      &:before {
-        transform: translate(-50%, -50%) scale(0.85);
-        opacity: 1;
-      }
-    }
-  }
-
-  .radio {
-    display: inline-block;
-    width: 2em; height: 2em;
-    position: relative;
-    border-radius: 1em;
-    background: red;//map-get($mn-primary-color, 200);
-    transition: background .2s ease;
-
-    &:before {
-      content: '';
-      position: absolute;
-      top: 50%; left: 50%;
-      width: 100%; height: 100%;
-      background-color: white;
-      border-radius: 50%;
-      transform: translate(-50%, -50%) scale(1);
-      opacity: 0;
-      transition: transform .2s ease;
-    }
   }
 }
