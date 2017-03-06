@@ -32,6 +32,10 @@ class MnRadio extends HTMLElement {
     inputAttributes.map(setInputAttribute)
     label.appendChild(input)
 
+    this.addEventListener('mouseleave', () => {
+      input.blur()
+    })
+
     const radio = document.createElement('div')
     radio.className = 'radio'
     label.appendChild(radio)
