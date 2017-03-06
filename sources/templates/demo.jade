@@ -1,0 +1,27 @@
+html
+  meta(name='viewport' content='width=device-width, user-scalable=no')
+  link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css')
+
+  block styles
+    link(rel='stylesheet' href='docs/vendor.css')
+    link(rel='stylesheet' href='dist/mn-radio.css')
+
+  style.
+
+    mn-radio h2 {font-weight: normal}
+    .zmdi-close {font-size: 2em}
+
+body
+  h2 mn-radio
+  include github-corner
+
+  .demo.mn-layout-fullscreen.mn-layout-centered
+    .mn-layout-container
+      .mn-layout-row.align-center
+        mn-radio.flex(label='Female' name='gender')
+        mn-radio.flex(label='Male' name='gender')
+
+  block scripts
+    script(src='docs/vendor.js')
+    script(src='dist/mn-radio.js')
+

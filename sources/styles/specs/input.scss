@@ -11,7 +11,7 @@ mn-radio {
 
   input:checked {
     & + .radio {
-      background: map-get($mn-primary-color, 900);
+      background: red;//map-get($mn-primary-color, 900);
 
       &:before {
         transform: translate(-50%, -50%) scale(0.85);
@@ -25,7 +25,7 @@ mn-radio {
     width: 2em; height: 2em;
     position: relative;
     border-radius: 1em;
-    background: map-get($mn-primary-color, 200);
+    background: red;//map-get($mn-primary-color, 200);
     transition: background .2s ease;
 
     &:before {

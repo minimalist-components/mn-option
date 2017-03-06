@@ -1,7 +1,10 @@
 module.exports = {
   templates: {
-    src: './sources/templates/*.jade',
-    dest: './public/',
+    src: [
+      './sources/templates/demo.jade',
+      './sources/templates/index.jade',
+    ],
+    dest: './docs/',
   },
   styles: {
     src: './sources/styles/*.scss',
@@ -27,8 +30,8 @@ module.exports = {
   browserSyncOptions: {
     server: {
       baseDir: [
-        './public',
-        './dist',
+        './docs',
+        '.',
       ],
     },
     notify: false,
