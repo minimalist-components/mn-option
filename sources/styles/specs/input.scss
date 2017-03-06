@@ -10,6 +10,10 @@ mn-radio {
   }
 
   input {
-    display: none;
+    // display: none;
+    // visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
   }
 }
