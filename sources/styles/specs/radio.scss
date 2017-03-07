@@ -1,54 +1,7 @@
-mn-radio {
-  input:checked {
-    & + .radio:before {
-      transform: translate(-50%, -50%) scale(1);
-      opacity: 1;
-    }
-  }
-
-  input:focus:not(:active):not(:hover) {
-    & + .radio:after {
-      transform: translate(-50%, -50%) scale(1);
-      opacity: 1;
-    }
-  }
-
+mn-option {
   .radio {
-    display: inline-block;
-    width: 1em;
-    height: 1em;
-    border-radius: 1em;
-    box-shadow: 0 0 0 2px $oc-gray-7;
-    border: 2px solid transparent;
-    position: relative;
-
-    &:before, &:after {
-      content: '';
-      position: absolute;
-      top: 50%; left: 50%;
+    &, &:before, &:after {
       border-radius: 50%;
-      transform: translate(-50%, -50%) scale(.2);
-      opacity: 0;
-      transition: all .2s ease;
-    }
-
-    &:before {
-      width: 1em; height: 1em;
-      background-color: $oc-gray-7;
-    }
-
-    &:after {
-      width: 2.5em; height: 2.5em;
-      background-color: $oc-gray-4;
-      z-index: -1;
-    }
-  }
-
-  &[disabled] .radio {
-    box-shadow: 0 0 0 2px $oc-gray-5;
-
-    &:before, &:after {
-      background-color: $oc-gray-5;
     }
   }
 }

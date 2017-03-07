@@ -1,4 +1,4 @@
-class MnRadio extends HTMLElement {
+class MnOption extends HTMLElement {
   constructor(self) {
     self = super(self)
     const element = this
@@ -6,7 +6,7 @@ class MnRadio extends HTMLElement {
     const inputAttributes = [
       {
         name: 'type',
-        default: 'radio',
+        // default: 'radio',
       },
       {
         name: 'name',
@@ -41,7 +41,9 @@ class MnRadio extends HTMLElement {
     })
 
     const radio = document.createElement('div')
-    radio.className = 'radio'
+    radio.className = 'input'
+    const type = this.getAttribute('type')
+    radio.classList.add(type)
     label.appendChild(radio)
     element.appendChild(label)
 
@@ -67,5 +69,5 @@ class MnRadio extends HTMLElement {
   }
 }
 
-window.customElements.define('mn-radio', MnRadio)
-window.MnRadio = MnRadio
+window.customElements.define('mn-option', MnOption)
+window.MnOption = MnOption

@@ -22,16 +22,24 @@ html
     }
 
 body
-  h2 mn-radio
+  h2 mn-option
   include github-corner
 
   .demo.mn-layout-fullscreen.mn-layout-centered
     .mn-layout-container
+      h3.align-center Choose a house
       .mn-layout-column.mn-layout-sm-row
-        mn-radio.flex#test(placeholder='Stark' name='house' checked)
-        mn-radio.flex(placeholder='Targaryen' name='house')
-        mn-radio.flex(placeholder='Baratheon' name='house')
-        mn-radio.flex(placeholder='Lannister' name='house')
+        mn-option.flex#test(placeholder='Stark' name='house' checked type='radio')
+        mn-option.flex(placeholder='Targaryen' name='house' type='radio')
+        mn-option.flex(placeholder='Baratheon' name='house' type='radio')
+        mn-option.flex(placeholder='Lannister' name='house' type='radio')
+
+      h3.align-center Who will die?
+      .mn-layout-column.mn-layout-sm-row
+        mn-option.flex#test(placeholder='Arya' name='dieList' type='checkbox')
+        mn-option.flex(placeholder='Bran' name='dieList' type='checkbox')
+        mn-option.flex(placeholder='Jon' name='dieList' checked type='checkbox')
+        mn-option.flex(placeholder='Robby' name='dieList' type='checkbox')
 
   block scripts
     script(src='docs/vendor.js')

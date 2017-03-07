@@ -2,9 +2,9 @@
 [![Dependency Status](https://gemnasium.com/badges/github.com/minimalist-components/mn-radio.svg)](https://gemnasium.com/github.com/minimalist-components/mn-radio)
 [![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php) -->
 
-# mn-radio
+# mn-option
 
-Minimalist input radio component, agnostic to framworks.
+Minimalist radio/checkbox component, agnostic to framworks.
 
 See the [demo](https://minimalist-components.github.io/mn-radio/)
 
