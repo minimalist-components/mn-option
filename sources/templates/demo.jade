@@ -7,9 +7,19 @@ html
     link(rel='stylesheet' href='dist/mn-radio.css')
 
   style.
+    .demo .mn-layout-container > div {
+      margin: 0 auto;
+    }
+    
+    @media (max-width: 599px) {
+      mn-radio {text-align: center}
+    }
 
-    mn-radio h2 {font-weight: normal}
-    .zmdi-close {font-size: 2em}
+    @media (min-width: 600px) {
+      .demo .mn-layout-container > div {
+        width: 80%;
+      }
+    }
 
 body
   h2 mn-radio
@@ -17,14 +27,10 @@ body
 
   .demo.mn-layout-fullscreen.mn-layout-centered
     .mn-layout-container
-      .mn-layout-column
-        mn-radio.flex(placeholder='Female' name='gender')
-        mn-radio.flex(placeholder='Male' name='gender')
-
-      .mn-layout-column
+      .mn-layout-column.mn-layout-sm-row
         mn-radio.flex(placeholder='Stark' name='house')
         mn-radio.flex(placeholder='Targaryen' name='house')
-        mn-radio.flex(placeholder='Bolton' name='house')
+        mn-radio.flex(placeholder='Baratheon' name='house')
         mn-radio.flex(placeholder='Lannister' name='house')
 
   block scripts
