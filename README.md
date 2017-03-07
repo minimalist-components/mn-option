@@ -1,34 +1,39 @@
+<!-- [![npm version](https://badge.fury.io/js/mn-radio.svg)](https://badge.fury.io/js/mn-radio)
+[![Dependency Status](https://gemnasium.com/badges/github.com/minimalist-components/mn-radio.svg)](https://gemnasium.com/github.com/minimalist-components/mn-radio)
+[![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php) -->
+
 # mn-radio
 
 Minimalist input radio component, agnostic to framworks.
 
-See the [demo](http://codepen.io/darlanmendonca/full/ZpQvLW)
+See the [demo](https://minimalist-components.github.io/mn-radio/)
 
-<!-- [![preview demo](https://raw.githubusercontent.com/minimalist-components/mn-radio/master/sources/example/mn-radio.gif)](http://codepen.io/darlanmendonca/full/akgXQq)  -->
+<a href="https://minimalist-components.github.io/mn-radio/">
+<img src="https://raw.githubusercontent.com/minimalist-components/mn-radio/master/preview.gif">
+</a>
 
 ### Install
 
 ```sh
-bower install --save mn-radio
+npm install --save mn-radio
 ```
 
-Or just download the main files, located in [dist/](https://github.com/minimalist-components/mn-radio/tree/master/dist)
+And bundle dependencies and main files in [dist/](https://github.com/minimalist-components/mn-radio/tree/master/dist) with your preferred tool.
 
 ### Usage
 
-And then, in your html, you can use the tag ```mn-radio``` i.e.
+Add to your html, the tag ```mn-radio``` e.g.
 
 ```html
-<mn-radio label="Female" name="gender"></mn-radio>
-<mn-radio label="Male" name="gender"></mn-radio>
+<mn-radio placeholder="Female" name="gender"></mn-radio>
+<mn-radio placeholder="Male" name="gender"></mn-radio>
 ```
 
 Custom attributes
 
-- label - custom attribute, to define the text visible for radio, like example above
+- placeholder - custom attribute, to define the text visible for radio
 
 The following attributes from input type radio are supported in this component
-
 
 - [autofocus](http://www.w3schools.com/tags/att_input_autofocus.asp)
 - [checked](http://www.w3schools.com/tags/att_input_checked.asp)
