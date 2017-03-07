@@ -6,7 +6,7 @@ class MnOption extends HTMLElement {
     const inputAttributes = [
       {
         name: 'type',
-        // default: 'radio',
+        default: 'checkbox',
       },
       {
         name: 'name',
@@ -40,11 +40,19 @@ class MnOption extends HTMLElement {
       input.blur()
     })
 
-    const radio = document.createElement('div')
-    radio.className = 'input'
     const type = this.getAttribute('type')
-    radio.classList.add(type)
-    label.appendChild(radio)
+    if (type) {
+      const customInput = document.createElement('div')
+      customInput.className = 'input'
+      customInput.classList.add(type)
+      label.appendChild(customInput)
+    } else {
+      const background = document.createElement('div')
+      background.classList.add('background')
+      background.textContent = this.getAttribute('placeholder')
+      label.appendChild(background)
+    }
+
     element.appendChild(label)
 
     return self

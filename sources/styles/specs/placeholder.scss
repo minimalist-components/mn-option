@@ -1,6 +1,10 @@
 mn-option {
   &:after {
     content: attr(placeholder);
+  }
+
+  &[type='radio']:after,
+  &[type='checkbox']:after, {
     position: absolute;
     top: 50%;
     left: 3em;
