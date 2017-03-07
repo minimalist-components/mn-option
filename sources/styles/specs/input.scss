@@ -15,4 +15,8 @@ mn-radio {
     pointer-events: none;
     position: absolute;
   }
+
+  &[disabled] {
+    pointer-events: none;
+  }
 }

@@ -43,4 +43,12 @@ mn-radio {
       z-index: -1;
     }
   }
+
+  &[disabled] .radio {
+    box-shadow: 0 0 0 2px $oc-gray-5;
+
+    &:before, &:after {
+      background-color: $oc-gray-5;
+    }
+  }
 }

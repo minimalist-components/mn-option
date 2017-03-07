@@ -7,4 +7,11 @@ mn-radio {
     transform: translate3d(0, -50%, 0);
     pointer-events: none;
   }
+
+  &[disabled] {
+    &:after {
+      color: $oc-gray-5;
+      // text-decoration: line-through;
+    }
+  }
 }
