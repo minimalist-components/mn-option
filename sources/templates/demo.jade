@@ -21,32 +21,39 @@ html
       }
     }
 
+    h3 {
+      margin-top: 5em;
+      box-shadow: 0 1px 0 #ced4da;
+      padding-bottom: .5em;
+      color: #868e96;
+    }
+
 body
   h2 mn-option
   include github-corner
 
   .demo.mn-layout-fullscreen.mn-layout-centered
     .mn-layout-container
-      h3.align-center Choose a house
+      h3.align-center natural type
+      .mn-layout-column.mn-layout-sm-row
+        mn-option.flex#test(placeholder='Ned' name='list')
+        mn-option.flex(placeholder='Daenerys' name='list' checked)
+        mn-option.flex(placeholder='Robert' name='list')
+        mn-option.flex(placeholder='Cersei' name='list')
+
+      h3.align-center radio type
       .mn-layout-column.mn-layout-sm-row
         mn-option.flex#test(placeholder='Stark' name='house' checked type='radio')
         mn-option.flex(placeholder='Targaryen' name='house' type='radio')
         mn-option.flex(placeholder='Baratheon' name='house' type='radio')
         mn-option.flex(placeholder='Lannister' name='house' type='radio')
 
-      h3.align-center minimal
+      h3.align-center checkbox type
       .mn-layout-column.mn-layout-sm-row
-        mn-option.flex#test(placeholder='Arya' name='list')
-        mn-option.flex(placeholder='Bran' name='list')
-        mn-option.flex(placeholder='Jon' name='list' checked)
-        mn-option.flex(placeholder='Robby' name='list')
-
-      h3.align-center Who will die?
-      .mn-layout-column.mn-layout-sm-row
-        mn-option.flex#test(placeholder='Arya' name='dieList' type='checkbox')
-        mn-option.flex(placeholder='Bran' name='dieList' type='checkbox')
-        mn-option.flex(placeholder='Jon' name='dieList' checked type='checkbox')
-        mn-option.flex(placeholder='Robby' name='dieList' type='checkbox')
+        mn-option.flex#test(placeholder='Ned' name='list' type='checkbox')
+        mn-option.flex(placeholder='Daenerys' name='list' type='checkbox')
+        mn-option.flex(placeholder='Robert' name='list' type='checkbox')
+        mn-option.flex(placeholder='Cersei' name='list' checked type='checkbox')
 
   block scripts
     script(src='docs/vendor.js')
