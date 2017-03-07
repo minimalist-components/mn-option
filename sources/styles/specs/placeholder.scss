@@ -4,7 +4,7 @@ mn-radio {
     position: absolute;
     top: 50%;
     left: 3em;
-    transform: translate(0, -50%);
+    transform: translate3d(0, -50%, 0);
     pointer-events: none;
   }
 }

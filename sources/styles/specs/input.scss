@@ -1,6 +1,7 @@
 mn-radio {
   position: relative;
   display: inline-block;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
   label {
     display: block;
@@ -10,8 +11,6 @@ mn-radio {
   }
 
   input {
-    // display: none;
-    // visibility: hidden;
     opacity: 0;
     pointer-events: none;
     position: absolute;
