@@ -29,11 +29,30 @@ mn-option {
       z-index: 10;
     }
 
+    input:focus:not(:active):not(:hover) {
+      & + .background {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+        background-color: $oc-gray-4;
+      }
+    }
+
+    // &.checked input:focus:not(:active):not(:hover) {
+    //   & + .background {background-color: $oc-gray-6}
+    // }
+
     &.checked {
       &:after {color: $oc-gray-1}
     }
 
     input:checked {
+      & + .background {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+      }
+    }
+
+    input:checked, &.checked {
       & + .background {
         transform: translate(-50%, -50%) scale(1);
         opacity: 1;
