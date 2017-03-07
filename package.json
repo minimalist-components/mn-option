@@ -1,8 +1,8 @@
 {
-  "name": "mn-radio",
+  "name": "mn-option",
   "version": "0.0.1",
-  "description": "a component radio input",
-  "main": "dist/mn-radio.js",
+  "description": "a checkbox and radio component",
+  "main": "dist/mn-option.js",
   "files": [
     "dist"
   ],

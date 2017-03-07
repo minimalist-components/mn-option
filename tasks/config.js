@@ -11,7 +11,7 @@ module.exports = {
     watch: './sources/styles/**/*.scss',
     dest: './dist/',
     sourcemaps: '/sources/styles',
-    output: 'mn-radio.css',
+    output: 'mn-option.css',
   },
   scripts: {
     src: [
@@ -19,7 +19,7 @@ module.exports = {
       '!./sources/**/*.spec.js',
     ],
     dest: './dist/',
-    output: 'mn-radio.js',
+    output: 'mn-option.js',
   },
   lintScripts: [
     './gulpfile.js',

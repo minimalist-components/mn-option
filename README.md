@@ -1,32 +1,32 @@
-<!-- [![npm version](https://badge.fury.io/js/mn-radio.svg)](https://badge.fury.io/js/mn-radio)
-[![Dependency Status](https://gemnasium.com/badges/github.com/minimalist-components/mn-radio.svg)](https://gemnasium.com/github.com/minimalist-components/mn-radio)
+<!-- [![npm version](https://badge.fury.io/js/mn-option.svg)](https://badge.fury.io/js/mn-option)
+[![Dependency Status](https://gemnasium.com/badges/github.com/minimalist-components/mn-option.svg)](https://gemnasium.com/github.com/minimalist-components/mn-option)
 [![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php) -->
 
 # mn-option
 
 Minimalist radio/checkbox component, agnostic to framworks.
 
-See the [demo](https://minimalist-components.github.io/mn-radio/)
+See the [demo](https://minimalist-components.github.io/mn-option/)
 
-<a href="https://minimalist-components.github.io/mn-radio/">
-<img src="https://raw.githubusercontent.com/minimalist-components/mn-radio/master/preview.gif">
+<a href="https://minimalist-components.github.io/mn-option/">
+<img src="https://raw.githubusercontent.com/minimalist-components/mn-option/master/preview.gif">
 </a>
 
 ### Install
 
 ```sh
-npm install --save mn-radio
+npm install --save mn-option
 ```
 
-And bundle dependencies and main files in [dist/](https://github.com/minimalist-components/mn-radio/tree/master/dist) with your preferred tool.
+And bundle dependencies and main files in [dist/](https://github.com/minimalist-components/mn-option/tree/master/dist) with your preferred tool.
 
 ### Usage
 
-Add to your html, the tag ```mn-radio``` e.g.
+Add to your html, the tag ```mn-option``` e.g.
 
 ```html
-<mn-radio placeholder="Female" name="gender"></mn-radio>
-<mn-radio placeholder="Male" name="gender"></mn-radio>
+<mn-option placeholder="Female" name="gender"></mn-option>
+<mn-option placeholder="Male" name="gender"></mn-option>
 ```
 
 Custom attributes
