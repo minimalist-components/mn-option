@@ -6,6 +6,7 @@ class MnOption extends HTMLElement {
     const inputAttributes = [
       {
         name: 'type',
+        values: ['radio', 'checkbox'],
         default: 'checkbox',
       },
       {
@@ -58,16 +59,19 @@ class MnOption extends HTMLElement {
     return self
 
     function setInputAttribute(attribute) {
-      let isDefaultAttribute = attribute.hasOwnProperty('default')
-      let attributeValue = element.getAttribute(attribute.name)
+      const isDefaultAttribute = attribute.hasOwnProperty('default')
+      const attributeValue = element.getAttribute(attribute.name)
+
+      console.log(attribute.name, isDefaultAttribute)
 
       if (isDefaultAttribute) {
-        let isValidValue = attribute.hasOwnProperty('values')
+        const isValidValue = attribute.hasOwnProperty('values')
           && attribute.values.indexOf(attributeValue) >= 0
 
-        let value = isValidValue
+        const value = isValidValue
           ? attributeValue
           : attribute.default
+        console.log(value)
 
         input.setAttribute(attribute.name, value)
       } else if (attributeValue) {
