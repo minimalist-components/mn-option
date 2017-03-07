@@ -41,3 +41,7 @@ The following attributes from input type radio are supported in this component
 - [name](http://www.w3schools.com/tags/att_input_name.asp)
 - [required](http://www.w3schools.com/tags/att_input_required.asp)
 - [value](http://www.w3schools.com/tags/att_input_value.asp)
+- [id](https://www.w3schools.com/tags/att_global_id.asp)
+
+Too works with a separted ```label``` with an attribute ```for```
+- [label for](https://www.w3schools.com/tags/att_label_for.asp)

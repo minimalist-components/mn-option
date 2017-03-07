@@ -23,6 +23,9 @@ class MnRadio extends HTMLElement {
       {
         name: 'value',
       },
+      {
+        name: 'id',
+      },
     ]
 
     const label = document.createElement('label')
@@ -30,6 +33,7 @@ class MnRadio extends HTMLElement {
     // input element
     const input = document.createElement('input')
     inputAttributes.map(setInputAttribute)
+    this.removeAttribute('id')
     label.appendChild(input)
 
     this.addEventListener('mouseleave', () => {
