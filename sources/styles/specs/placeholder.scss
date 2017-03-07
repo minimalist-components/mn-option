@@ -1,6 +1,9 @@
 mn-option {
   &:after {
     content: attr(placeholder);
+    pointer-events: none;
+    z-index: 10;
+    position: relative;
   }
 
   &[type='radio']:after,
@@ -9,7 +12,6 @@ mn-option {
     top: 50%;
     left: 3em;
     transform: translate3d(0, -50%, 0);
-    pointer-events: none;
   }
 
   &[disabled] {

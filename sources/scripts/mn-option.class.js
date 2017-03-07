@@ -50,9 +50,18 @@ class MnOption extends HTMLElement {
     } else {
       const background = document.createElement('div')
       background.classList.add('background')
-      background.textContent = this.getAttribute('placeholder')
       label.appendChild(background)
     }
+
+    if (input.checked) {
+      this.classList.add('checked')
+    }
+
+    input.addEventListener('change', () => {
+      input.checked
+        ? this.classList.add('checked')
+        : this.classList.remove('checked')
+    })
 
     element.appendChild(label)
 
@@ -62,8 +71,6 @@ class MnOption extends HTMLElement {
       const isDefaultAttribute = attribute.hasOwnProperty('default')
       const attributeValue = element.getAttribute(attribute.name)
 
-      console.log(attribute.name, isDefaultAttribute)
-
       if (isDefaultAttribute) {
         const isValidValue = attribute.hasOwnProperty('values')
           && attribute.values.indexOf(attributeValue) >= 0
@@ -71,7 +78,6 @@ class MnOption extends HTMLElement {
         const value = isValidValue
           ? attributeValue
           : attribute.default
-        console.log(value)
 
         input.setAttribute(attribute.name, value)
       } else if (attributeValue) {
