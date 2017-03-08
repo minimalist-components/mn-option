@@ -7,6 +7,10 @@ html
     link(rel='stylesheet' href='dist/mn-option.css')
 
   style.
+    .demo {
+      margin-bottom: 5em;
+    }
+
     .demo .mn-layout-container > div {
       margin: 0 auto;
     }
@@ -60,6 +64,46 @@ body
         mn-option.flex(placeholder='Daenerys' name='list' type='checkbox')
         mn-option.flex(placeholder='Robert' name='list' type='checkbox')
         mn-option.flex(placeholder='Cersei' name='list' checked type='checkbox')
+
+  .docs.mn-layout-container
+    mn-code.sh.
+      npm install --save mn-option
+
+    p And bundle dependencies and main files in <strong>dist/</strong> with your preferred tool.
+
+    h3 usage
+    p in your html, you can use the tag <strong class="tag">mn-option</strong> e.g.
+    mn-code.html.
+      <!-- checkboxes -->
+      <mn-option placeholder="Stark" name="gender"></mn-option>
+      <mn-option placeholder="Lannister" name="gender"></mn-option>
+      <mn-option placeholder="Targaryen" name="gender"></mn-option>
+
+    p To define as radio, use the attribute <strong>type</strong>
+    mn-code.html.
+      <!-- radios -->
+      <mn-option placeholder="Female" name="gender" type="radio"></mn-option>
+      <mn-option placeholder="Male" name="gender" type="radio"></mn-option>
+
+    h3 custom attributes
+
+    p - placeholder - custom attribute, to define the text visible
+    p - type (only checkbox and radio)
+
+    h3 Natural checkbox or radio
+    p Is just a css class, to define a minimal design. Useful in some cases. E.g.
+
+    mn-code.html.
+      <!-- checkboxes, but if you want radio, just implement the type attribute with radio value -->
+      <mn-option class="natural" placeholder="Stark" name="gender"></mn-option>
+      <mn-option class="natural" placeholder="Lannister" name="gender"></mn-option>
+      <mn-option class="natural" placeholder="Targaryen" name="gender"></mn-option>
+
+    p The following attributes from input type radio are supported in this component, <em>autofocus</em>, <em>checked</em>, <em>disabled</em>, <em>name</em>, <em>required</em>, <em>value</em> and <em>id</em>.
+
+    p Too works with a separted <strong>label</strong> with an attribute <strong>for</strong>.
+
+
 
   block scripts
     script(src='docs/vendor.js')
