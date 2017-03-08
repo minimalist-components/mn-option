@@ -39,9 +39,9 @@ mn-option {
     display: inline-block;
     width: 1em;
     height: 1em;
-    box-shadow: 0 0 0 2px $oc-gray-7;
-    border: 2px solid transparent;
+    border: 2px solid $oc-gray-7;
     position: relative;
+    padding: 2px;
 
     &:before, &:after {
       content: '';

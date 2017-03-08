@@ -1,6 +1,37 @@
 mn-option {
   .checkbox {
+    border-radius: 3px;
+    // padding: 0;
+    // border-width: 4px;
+
     &:before {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      height: 100%;
+      transition: opacity .2s ease;
+    }
+
+    svg {
+      position: absolute;
+      width: 2em;
+      height: 2em;
+
+      polyline {
+        stroke-dasharray: 25;
+        stroke-dashoffset: -25;
+        transition: stroke-dashoffset .1s ease;
+        stroke: $oc-gray-1;
+        stroke-width: 3;
+      }
+    }
+  }
+
+  input:checked {
+    & + .input polyline {
+      stroke-dashoffset: 0;
+      transition: stroke-dashoffset .1s .1s cubic-bezier(.39,.56,.6,.06);
     }
   }
 }

@@ -48,6 +48,18 @@ class MnOption extends HTMLElement {
       customInput.className = 'input'
       customInput.classList.add(type)
       label.appendChild(customInput)
+
+      if (type === 'checkbox') {
+        const vector = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
+        vector.setAttribute('width', '16px')
+        vector.setAttribute('height', '16px')
+        vector.innerHTML = `<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+            <g id="checkbox" transform="translate(2.000000, 3.000000)" stroke-width="2" stroke="#000000">
+                <polyline id="Shape" points="12.3825 0.581533333 3.653 10.3935333 0.273722222 6.7386"></polyline>
+            </g>
+        </g>`
+        customInput.appendChild(vector)
+      }
     } else {
       const background = document.createElement('div')
       background.classList.add('background')
