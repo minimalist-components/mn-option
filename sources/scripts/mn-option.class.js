@@ -202,7 +202,15 @@ class MnOption extends HTMLElement {
 
 function parsed(value) {
   try {
-    return eval(`(${value})`)
+    const isVariable = !value.startsWith('[')
+      && !value.startsWith('{')
+      && !value.startsWith('\'')
+      && !value.startsWith('"')
+      && !value.startsWith('`')
+
+    return isVariable
+        ? eval(`'${value}'`) // convert to string
+        : eval(`(${value})`) // evaluate
   } catch (e) {
     return value
   }

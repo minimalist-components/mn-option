@@ -37,14 +37,16 @@ body
 
   form.demo.mn-layout-fullscreen.mn-layout-centered
     .mn-layout-container
-      h3.align-center checkbox type with object value
+      h3.align-center checkbox type different values
       .mn-layout-column.mn-layout-sm-row
-        mn-option.natural.flex(placeholder='Stark' name='list' type='checkbox' value='test5' checked)
-        mn-option.natural.flex(placeholder='Lannister' name='list' type='checkbox' value='{name: "lannister"}')
-        mn-option.natural.flex(placeholder='Lannister' name='list' type='checkbox' value='5')
-        mn-option.natural.flex(placeholder='Lannister' name='list' type='checkbox' value='true')
-        mn-option.natural.flex(placeholder='Lannister' name='list' type='checkbox' value='false')
-        mn-option.natural.flex(placeholder='Lannister' name='list' type='checkbox' value='["test", 5]')
+        mn-option.natural.flex(placeholder='string' name='list' type='checkbox' value='test5' checked)
+        mn-option.natural.flex(placeholder='object' name='list' type='checkbox' value='{name: "lannister"}')
+        mn-option.natural.flex(placeholder='number' name='list' type='checkbox' value='5')
+        mn-option.natural.flex(placeholder='true' name='list' type='checkbox' value='true')
+        mn-option.natural.flex(placeholder='false' name='list' type='checkbox' value='false')
+        mn-option.natural.flex(placeholder='array' name='list' type='checkbox' value='["test", 5]')
+        mn-option.natural.flex(placeholder='mixed' name='list' type='checkbox' value='["test", 5, {name: "test"}]')
+        mn-option.natural.flex(placeholder='variable' name='list' type='checkbox' value='document')
     //- .mn-layout-container
       h3.align-center radio type
       .mn-layout-column.mn-layout-sm-row
