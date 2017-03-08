@@ -22,8 +22,7 @@ html
     }
 
     h3 {
-      margin-top: 5em;
-      box-shadow: 0 1px 0 #ced4da;
+      margin-top: 7em;
       padding-bottom: .5em;
       color: #868e96;
     }
@@ -33,20 +32,20 @@ body
   include github-corner
 
   .demo.mn-layout-fullscreen.mn-layout-centered
-    h3 vector
-    //- div: svg.checkbox(width='25' height='20').
-      <g>
-        <polyline fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="21.145,3.793 
-          9.058,17.173 4.379,12.189   "/>
-      </g>
-
     .mn-layout-container
-      h3.align-center natural type
+      h3.align-center natural checkbox type
       .mn-layout-column.mn-layout-sm-row
-        mn-option.natural.flex#test(placeholder='Ned' name='list' type='radio')
-        mn-option.natural.flex(placeholder='Daenerys' name='list' checked type='radio')
-        mn-option.natural.flex(placeholder='Robert' name='list' type='radio')
-        mn-option.natural.flex(placeholder='Cersei' name='list' type='radio')
+        mn-option.natural.flex#test(placeholder='Ned' name='list' checked type='checkbox')
+        mn-option.natural.flex(placeholder='Daenerys' name='list' checked type='checkbox')
+        mn-option.natural.flex(placeholder='Robert' name='list' type='checkbox')
+        mn-option.natural.flex(placeholder='Cersei' name='list' type='checkbox')
+
+      h3.align-center natural radio type
+      .mn-layout-column.mn-layout-sm-row
+        mn-option.natural.flex#test(placeholder='Ned' name='list2' type='radio')
+        mn-option.natural.flex(placeholder='Daenerys' name='list2' checked type='radio')
+        mn-option.natural.flex(placeholder='Robert' name='list2' type='radio')
+        mn-option.natural.flex(placeholder='Cersei' name='list2' type='radio')
 
       h3.align-center radio type
       .mn-layout-column.mn-layout-sm-row
