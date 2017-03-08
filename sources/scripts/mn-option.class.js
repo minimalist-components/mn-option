@@ -207,6 +207,8 @@ function parsed(value) {
       && !value.startsWith('\'')
       && !value.startsWith('"')
       && !value.startsWith('`')
+      && value !== 'true'
+      && value !== 'false'
 
     return isVariable
         ? eval(`'${value}'`) // convert to string
