@@ -140,7 +140,7 @@ class MnOption extends HTMLElement {
       .from(options)
       .map(item => item.querySelector('input'))
       .filter(item => item.checked)
-      .map(item => item.value)
+      .map(item => parsed(item.value))
 
     return type === 'radio' || options.length <= 1
       ? value[0]
@@ -197,6 +197,14 @@ class MnOption extends HTMLElement {
     }
 
     this.querySelector('input').checked = checked
+  }
+}
+
+function parsed(value) {
+  try {
+    return eval(`(${value})`)
+  } catch (e) {
+    return value
   }
 }
 

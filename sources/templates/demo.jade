@@ -37,6 +37,15 @@ body
 
   form.demo.mn-layout-fullscreen.mn-layout-centered
     .mn-layout-container
+      h3.align-center checkbox type with object value
+      .mn-layout-column.mn-layout-sm-row
+        mn-option.natural.flex(placeholder='Stark' name='list' type='checkbox' value='test5' checked)
+        mn-option.natural.flex(placeholder='Lannister' name='list' type='checkbox' value='{name: "lannister"}')
+        mn-option.natural.flex(placeholder='Lannister' name='list' type='checkbox' value='5')
+        mn-option.natural.flex(placeholder='Lannister' name='list' type='checkbox' value='true')
+        mn-option.natural.flex(placeholder='Lannister' name='list' type='checkbox' value='false')
+        mn-option.natural.flex(placeholder='Lannister' name='list' type='checkbox' value='["test", 5]')
+    //- .mn-layout-container
       h3.align-center radio type
       .mn-layout-column.mn-layout-sm-row
         mn-option.flex(placeholder='Stark' name='list3' type='radio' value='stark' checked)
