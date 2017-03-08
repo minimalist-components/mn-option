@@ -22,16 +22,40 @@ And bundle dependencies and main files in [dist/](https://github.com/minimalist-
 
 ### Usage
 
-Add to your html, the tag ```mn-option``` e.g.
+Add to your html, the tag ```mn-option``` with respective type, default is checkbox, e.g.
 
 ```html
-<mn-option placeholder="Female" name="gender"></mn-option>
-<mn-option placeholder="Male" name="gender"></mn-option>
+<!-- checkboxes -->
+<mn-option placeholder="Stark" name="gender"></mn-option>
+<mn-option placeholder="Lannister" name="gender"></mn-option>
+<mn-option placeholder="Targaryen" name="gender"></mn-option>
 ```
 
-Custom attributes
 
-- placeholder - custom attribute, to define the text visible for radio
+To define as radio, use the attribute `type`
+
+```html
+<!-- radios -->
+<mn-option placeholder="Female" name="gender" type="radio"></mn-option>
+<mn-option placeholder="Male" name="gender" type="radio"></mn-option>
+```
+
+#### Custom attributes
+
+- placeholder - custom attribute, to define the text visible
+- type (only checkbox and radio)
+
+#### Natural checkbox or radio
+
+Is just a css class, to define a minimal design. Useful in some cases. E.g.
+
+```html
+<!-- checkboxes, but if you want radio, just implement the type attribute with radio value -->
+<mn-option class="natural" placeholder="Stark" name="gender"></mn-option>
+<mn-option class="natural" placeholder="Lannister" name="gender"></mn-option>
+<mn-option class="natural" placeholder="Targaryen" name="gender"></mn-option>
+```
+
 
 The following attributes from input type radio are supported in this component
 
