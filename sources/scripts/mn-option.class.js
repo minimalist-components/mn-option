@@ -42,7 +42,8 @@ class MnOption extends HTMLElement {
     })
 
     const type = this.getAttribute('type')
-    if (type) {
+    const isNatural = this.classList.contains('natural')
+    if (type && !isNatural) {
       const customInput = document.createElement('div')
       customInput.className = 'input'
       customInput.classList.add(type)
@@ -58,6 +59,14 @@ class MnOption extends HTMLElement {
     }
 
     input.addEventListener('change', () => {
+      if (input.getAttribute('type') === 'radio') {
+        const name = input.getAttribute('name')
+        const lastChecked = document.querySelector(`mn-option.checked[name="${name}"]`)
+        if (lastChecked) {
+          lastChecked.classList.remove('checked')
+        }
+      }
+
       input.checked
         ? this.classList.add('checked')
         : this.classList.remove('checked')

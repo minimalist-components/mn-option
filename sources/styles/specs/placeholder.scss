@@ -6,8 +6,8 @@ mn-option {
     position: relative;
   }
 
-  &[type='radio']:after,
-  &[type='checkbox']:after, {
+  &[type='radio']:not(.natural):after,
+  &[type='checkbox']:not(.natural):after, {
     position: absolute;
     top: 50%;
     left: 3em;
