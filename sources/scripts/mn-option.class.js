@@ -159,14 +159,14 @@ class MnOption extends HTMLElement {
     Array
       .from(options)
       .forEach(option => {
-        option.querySelector('input').checked = false
+        option.checked = false
       })
 
     if (type === 'radio') {
       const value = values[0]
       const option = form.querySelector(`mn-option[name="${name}"][value="${value}"]`)
       if (option) {
-        option.querySelector('input').checked = true
+        option.checked = true
       } else {
         console.error(`${value} is a invalid value to mn-option[name="${name}"]`)
       }
@@ -175,13 +175,28 @@ class MnOption extends HTMLElement {
         .forEach(value => {
           const option = form.querySelector(`mn-option[name="${name}"][value="${value}"]`)
           if (option) {
-            option.querySelector('input').checked = true
+            option.checked = true
           } else {
             console.error(`${value} is a invalid value to mn-option[name="${name}"]`)
           }
         })
     }
+  }
 
+  get checked() {
+    return this.hasAttribute('checked')
+  }
+
+  set checked(checked) {
+    if (checked) {
+      this.setAttribute('checked', 'true')
+      this.classList.add('checked')
+    } else {
+      this.removeAttribute('checked')
+      this.classList.remove('checked')
+    }
+
+    this.querySelector('input').checked = checked
   }
 }
 
