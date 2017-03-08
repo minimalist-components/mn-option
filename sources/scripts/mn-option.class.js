@@ -107,6 +107,7 @@ class MnOption extends HTMLElement {
     })
 
     element.appendChild(label)
+    // this.setFormGetter()
 
     return self
 
@@ -144,6 +145,43 @@ class MnOption extends HTMLElement {
     return type === 'radio' || options.length <= 1
       ? value[0]
       : value
+  }
+
+  set value(value) {
+    const form = this.closest('form')
+    const name = this.getAttribute('name')
+    const options = form.querySelectorAll(`mn-option[name="${name}"]`)
+    const type = options[0].getAttribute('type')
+    const values = Array.isArray(value)
+      ? value
+      : [value]
+
+    Array
+      .from(options)
+      .forEach(option => {
+        option.querySelector('input').checked = false
+      })
+
+    if (type === 'radio') {
+      const value = values[0]
+      const option = form.querySelector(`mn-option[name="${name}"][value="${value}"]`)
+      if (option) {
+        option.querySelector('input').checked = true
+      } else {
+        console.error(`${value} is a invalid value to mn-option[name="${name}"]`)
+      }
+    } else {
+      values
+        .forEach(value => {
+          const option = form.querySelector(`mn-option[name="${name}"][value="${value}"]`)
+          if (option) {
+            option.querySelector('input').checked = true
+          } else {
+            console.error(`${value} is a invalid value to mn-option[name="${name}"]`)
+          }
+        })
+    }
+
   }
 }
 

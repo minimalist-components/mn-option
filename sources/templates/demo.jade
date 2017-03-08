@@ -58,12 +58,12 @@ body
         mn-option.flex(placeholder='Baratheon' name='house' type='radio' value='baratheon')
         mn-option.flex(placeholder='Lannister' name='house' type='radio' value='lannister')
 
-      //- h3.align-center checkbox type
-      //- .mn-layout-column.mn-layout-sm-row
-        mn-option.flex(placeholder='Ned' name='list3' type='checkbox')
-        mn-option.flex(placeholder='Daenerys' name='list3' type='checkbox')
-        mn-option.flex(placeholder='Robert' name='list3' type='checkbox')
-        mn-option.flex(placeholder='Cersei' name='list3' checked type='checkbox')
+      h3.align-center checkbox type
+      .mn-layout-column.mn-layout-sm-row
+        mn-option.flex(placeholder='Ned' name='list3' type='checkbox' value='ned')
+        mn-option.flex(placeholder='Daenerys' name='list3' type='checkbox' value='daenerys')
+        mn-option.flex(placeholder='Robert' name='list3' type='checkbox' value='robert')
+        mn-option.flex(placeholder='Cersei' name='list3' checked type='checkbox' value='cersei')
 
   .docs.mn-layout-container
     mn-code.sh.
@@ -112,4 +112,5 @@ body
       var list = document.querySelector('mn-option[name="list"]')
       var list2 = document.querySelector('mn-option[name="list2"]')
       var house = document.querySelector('mn-option[name="house"]')
+      var list3 = document.querySelector('mn-option[name="list3"]')
 
