@@ -36,7 +36,7 @@ body
   include github-corner
 
   form.demo.mn-layout-fullscreen.mn-layout-centered
-    .mn-layout-container
+    //- .mn-layout-container
       h3.align-center checkbox type different values
       .mn-layout-column.mn-layout-sm-row
         mn-option.natural.flex(placeholder='string' name='list' type='checkbox' value='test5' checked)
@@ -47,7 +47,7 @@ body
         mn-option.natural.flex(placeholder='array' name='list' type='checkbox' value='["test", 5]')
         mn-option.natural.flex(placeholder='mixed' name='list' type='checkbox' value='["test", 5, {name: "test"}]')
         mn-option.natural.flex(placeholder='variable' name='list' type='checkbox' value='document')
-    //- .mn-layout-container
+    .mn-layout-container
       h3.align-center radio type
       .mn-layout-column.mn-layout-sm-row
         mn-option.flex(placeholder='Stark' name='list3' type='radio' value='stark' checked)
