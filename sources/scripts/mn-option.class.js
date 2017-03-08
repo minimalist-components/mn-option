@@ -3,6 +3,18 @@ class MnOption extends HTMLElement {
     self = super(self)
     const element = this
 
+    if (!this.hasAttribute('name')) {
+      console.error('missing name in mn-option')
+    }
+
+    if (!this.hasAttribute('value')) {
+      const name = this.hasAttribute('name')
+        ? `[name="${this.getAttribute('name')}"]`
+        : ''
+
+      console.error(`missing value in mn-option${name}`)
+    }
+
     const inputAttributes = [
       {
         name: 'type',
@@ -53,9 +65,19 @@ class MnOption extends HTMLElement {
         const vector = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
         vector.setAttribute('width', '16px')
         vector.setAttribute('height', '16px')
-        vector.innerHTML = `<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
-            <g id="checkbox" transform="translate(2.000000, 3.000000)" stroke-width="2" stroke="#000000">
-                <polyline id="Shape" points="12.3825 0.581533333 3.653 10.3935333 0.273722222 6.7386"></polyline>
+        vector.innerHTML = `<g
+          stroke="none"
+          stroke-width="1"
+          fill="none"
+          fill-rule="evenodd"
+          stroke-linecap="round"
+          stroke-linejoin="round">
+            <g
+              transform="translate(2.000000, 3.000000)"
+              stroke-width="2"
+              stroke="#000000">
+                <polyline
+                  points="12.3825 0.581533333 3.653 10.3935333 0.273722222 6.7386"></polyline>
             </g>
         </g>`
         customInput.appendChild(vector)
@@ -105,6 +127,23 @@ class MnOption extends HTMLElement {
         input.setAttribute(attribute.name, attributeValue)
       }
     }
+  }
+
+  get value() {
+    const form = this.closest('form')
+    const name = this.getAttribute('name')
+    const options = form.querySelectorAll(`mn-option[name="${name}"]`)
+    const type = this.getAttribute('type')
+
+    const value = Array
+      .from(options)
+      .map(item => item.querySelector('input'))
+      .filter(item => item.checked)
+      .map(item => item.value)
+
+    return type === 'radio' || options.length <= 1
+      ? value[0]
+      : value
   }
 }
 

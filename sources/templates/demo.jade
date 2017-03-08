@@ -35,35 +35,35 @@ body
   h2 mn-option
   include github-corner
 
-  .demo.mn-layout-fullscreen.mn-layout-centered
+  form.demo.mn-layout-fullscreen.mn-layout-centered
     .mn-layout-container
       h3.align-center natural checkbox type
       .mn-layout-column.mn-layout-sm-row
-        mn-option.natural.flex#test(placeholder='Ned' name='list' checked type='checkbox')
-        mn-option.natural.flex(placeholder='Daenerys' name='list' checked type='checkbox')
-        mn-option.natural.flex(placeholder='Robert' name='list' type='checkbox')
-        mn-option.natural.flex(placeholder='Cersei' name='list' type='checkbox')
+        mn-option.natural.flex(placeholder='Ned' name='list' checked type='checkbox' value='ned')
+        mn-option.natural.flex(placeholder='Daenerys' name='list' checked type='checkbox' value='daenerys')
+        mn-option.natural.flex(placeholder='Robert' name='list' type='checkbox' value='robert')
+        mn-option.natural.flex(placeholder='Cersei' name='list' type='checkbox' value='cersei')
 
       h3.align-center natural radio type
       .mn-layout-column.mn-layout-sm-row
-        mn-option.natural.flex#test(placeholder='Ned' name='list2' type='radio')
-        mn-option.natural.flex(placeholder='Daenerys' name='list2' checked type='radio')
-        mn-option.natural.flex(placeholder='Robert' name='list2' type='radio')
-        mn-option.natural.flex(placeholder='Cersei' name='list2' type='radio')
+        mn-option.natural.flex(placeholder='Ned' name='list2' type='radio' value="ned")
+        mn-option.natural.flex(placeholder='Daenerys' name='list2' checked type='radio' value="daenerys")
+        mn-option.natural.flex(placeholder='Robert' name='list2' type='radio' value="robert")
+        mn-option.natural.flex(placeholder='Cersei' name='list2' type='radio' value="cersei")
 
       h3.align-center radio type
       .mn-layout-column.mn-layout-sm-row
-        mn-option.flex#test(placeholder='Stark' name='house' checked type='radio')
-        mn-option.flex(placeholder='Targaryen' name='house' type='radio')
-        mn-option.flex(placeholder='Baratheon' name='house' type='radio')
-        mn-option.flex(placeholder='Lannister' name='house' type='radio')
+        mn-option.flex(placeholder='Stark' name='house' checked type='radio' value='stark')
+        mn-option.flex(placeholder='Targaryen' name='house' type='radio' value='targaryen')
+        mn-option.flex(placeholder='Baratheon' name='house' type='radio' value='baratheon')
+        mn-option.flex(placeholder='Lannister' name='house' type='radio' value='lannister')
 
-      h3.align-center checkbox type
-      .mn-layout-column.mn-layout-sm-row
-        mn-option.flex#test(placeholder='Ned' name='list' type='checkbox')
-        mn-option.flex(placeholder='Daenerys' name='list' type='checkbox')
-        mn-option.flex(placeholder='Robert' name='list' type='checkbox')
-        mn-option.flex(placeholder='Cersei' name='list' checked type='checkbox')
+      //- h3.align-center checkbox type
+      //- .mn-layout-column.mn-layout-sm-row
+        mn-option.flex(placeholder='Ned' name='list3' type='checkbox')
+        mn-option.flex(placeholder='Daenerys' name='list3' type='checkbox')
+        mn-option.flex(placeholder='Robert' name='list3' type='checkbox')
+        mn-option.flex(placeholder='Cersei' name='list3' checked type='checkbox')
 
   .docs.mn-layout-container
     mn-code.sh.
@@ -108,4 +108,8 @@ body
   block scripts
     script(src='docs/vendor.js')
     script(src='dist/mn-option.js')
+    script.
+      var list = document.querySelector('mn-option[name="list"]')
+      var list2 = document.querySelector('mn-option[name="list2"]')
+      var house = document.querySelector('mn-option[name="house"]')
 
