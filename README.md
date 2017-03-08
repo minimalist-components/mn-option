@@ -25,7 +25,7 @@ And bundle dependencies and main files in [dist/](https://github.com/minimalist-
 Add to your html, the tag ```mn-option``` with respective type, default is checkbox, e.g.
 
 ```html
-<!-- checkboxes -->
+<!-- checkbox -->
 <mn-option placeholder="Stark" name="gender"></mn-option>
 <mn-option placeholder="Lannister" name="gender"></mn-option>
 <mn-option placeholder="Targaryen" name="gender"></mn-option>
@@ -35,7 +35,7 @@ Add to your html, the tag ```mn-option``` with respective type, default is check
 To define as radio, use the attribute `type`
 
 ```html
-<!-- radios -->
+<!-- radio -->
 <mn-option placeholder="Female" name="gender" type="radio"></mn-option>
 <mn-option placeholder="Male" name="gender" type="radio"></mn-option>
 ```
@@ -57,7 +57,7 @@ Is just a css class, to define a minimal design. Useful in some cases. E.g.
 ```
 
 
-The following attributes from input type radio are supported in this component
+The following attributes from inputs are supported in this component
 
 - [autofocus](http://www.w3schools.com/tags/att_input_autofocus.asp)
 - [checked](http://www.w3schools.com/tags/att_input_checked.asp)
