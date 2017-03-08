@@ -37,6 +37,20 @@ body
 
   form.demo.mn-layout-fullscreen.mn-layout-centered
     .mn-layout-container
+      h3.align-center radio type
+      .mn-layout-column.mn-layout-sm-row
+        mn-option.flex(placeholder='Stark' name='list3' checked type='radio' value='stark')
+        mn-option.flex(placeholder='Targaryen' name='list3' type='radio' value='targaryen')
+        mn-option.flex(placeholder='Baratheon' name='list3' type='radio' value='baratheon')
+        mn-option.flex(placeholder='Lannister' name='list3' type='radio' value='lannister')
+      h3.align-center checkbox type
+      .mn-layout-column.mn-layout-sm-row
+        mn-option.flex(placeholder='Ned' name='list4' type='checkbox' value='ned')
+        mn-option.flex(placeholder='Daenerys' name='list4' type='checkbox' value='daenerys')
+        mn-option.flex(placeholder='Robert' name='list4' type='checkbox' value='robert')
+        mn-option.flex(placeholder='Cersei' name='list4' checked type='checkbox' value='cersei')
+      
+      
       h3.align-center natural checkbox type
       .mn-layout-column.mn-layout-sm-row
         mn-option.natural.flex(placeholder='Ned' name='list' checked type='checkbox' value='ned')
@@ -50,20 +64,6 @@ body
         mn-option.natural.flex(placeholder='Daenerys' name='list2' checked type='radio' value="daenerys")
         mn-option.natural.flex(placeholder='Robert' name='list2' type='radio' value="robert")
         mn-option.natural.flex(placeholder='Cersei' name='list2' type='radio' value="cersei")
-
-      h3.align-center radio type
-      .mn-layout-column.mn-layout-sm-row
-        mn-option.flex(placeholder='Stark' name='list3' checked type='radio' value='stark')
-        mn-option.flex(placeholder='Targaryen' name='list3' type='radio' value='targaryen')
-        mn-option.flex(placeholder='Baratheon' name='list3' type='radio' value='baratheon')
-        mn-option.flex(placeholder='Lannister' name='list3' type='radio' value='lannister')
-
-      h3.align-center checkbox type
-      .mn-layout-column.mn-layout-sm-row
-        mn-option.flex(placeholder='Ned' name='list4' type='checkbox' value='ned')
-        mn-option.flex(placeholder='Daenerys' name='list4' type='checkbox' value='daenerys')
-        mn-option.flex(placeholder='Robert' name='list4' type='checkbox' value='robert')
-        mn-option.flex(placeholder='Cersei' name='list4' checked type='checkbox' value='cersei')
 
   .docs.mn-layout-container
     mn-code.sh.
