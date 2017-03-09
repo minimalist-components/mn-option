@@ -1,4 +1,7 @@
 mn-option {
+  &[placeholder]:after {content: attr(placeholder)}
+  &[value]:not([placeholder]):after {content: attr(value)}
+
   &:after {
     content: attr(placeholder);
     pointer-events: none;
