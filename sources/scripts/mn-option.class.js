@@ -3,9 +3,9 @@ class MnOption extends HTMLElement {
     self = super(self)
     const element = this
 
-    if (!this.hasAttribute('name')) {
-      console.error('missing name in mn-option')
-    }
+    // if (!this.hasAttribute('name')) {
+    //   console.error('missing name in mn-option')
+    // }
 
     if (!this.hasAttribute('value')) {
       const name = this.hasAttribute('name')
@@ -140,7 +140,9 @@ class MnOption extends HTMLElement {
   get value() {
     const form = this.closest('form')
     const name = this.getAttribute('name')
-    const options = form.querySelectorAll(`mn-option[name="${name}"]`)
+      ? `[name="${name}"]`
+      : ':not([name])'
+    const options = form.querySelectorAll(`mn-option${name}`)
     const type = this.getAttribute('type')
 
     const value = Array

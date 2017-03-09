@@ -1,133 +1,141 @@
 html
-  meta(name='viewport' content='width=device-width, user-scalable=no')
-  link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css')
+  head
+    meta(name='viewport' content='width=device-width, user-scalable=no')
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css')
 
-  block styles
-    link(rel='stylesheet' href='docs/vendor.css')
-    link(rel='stylesheet' href='dist/mn-option.css')
+    block styles
+      link(rel='stylesheet' href='docs/vendor.css')
+      link(rel='stylesheet' href='dist/mn-option.css')
 
-  style.
-    .demo {
-      margin-bottom: 5em;
-    }
-
-    .demo .mn-layout-container > div {
-      margin: 0 auto;
-    }
-
-    @media (max-width: 599px) {
-      mn-option {text-align: center}
-    }
-
-    @media (min-width: 600px) {
-      .demo .mn-layout-container > div {
-        width: 80%;
+    style.
+      .demo {
+        margin-bottom: 5em;
       }
-    }
 
-    .demo h3 {
-      margin-top: 7em;
-      padding-bottom: .5em;
-      color: #868e96;
-    }
+      .demo .mn-layout-container > div {
+        margin: 0 auto;
+      }
 
-body
-  h2 mn-option
-  include github-corner
+      @media (max-width: 599px) {
+        mn-option {text-align: center}
+      }
 
-  form.demo.mn-layout-fullscreen.mn-layout-centered
-    //- .mn-layout-container
-      h3.align-center checkbox with different values
-      //- .mn-layout-column.mn-layout-sm-row(style='flex-wrap: wrap')
-      div(style='text-align: center')
-        mn-option.natural.flex(placeholder='string' name='list' type='checkbox' value='test5' checked)
-        mn-option.natural.flex(placeholder='object' name='list' type='checkbox' value='{name: "lannister"}')
-        mn-option.natural.flex(placeholder='number' name='list' type='checkbox' value='5')
-        mn-option.natural.flex(placeholder='true' name='list' type='checkbox' value='true')
-        mn-option.natural.flex(placeholder='false' name='list' type='checkbox' value='false')
-        mn-option.natural.flex(placeholder='array' name='list' type='checkbox' value='["test", 5]')
-        mn-option.natural.flex(name='list' type='checkbox' value='["test", 5, {name: "test"}, name: "test"]')
-        mn-option.natural.flex(placeholder='mixed' name='list' type='checkbox' value='["test", 5, {name: "test"}, name: "test"]')
-        mn-option.natural.flex(placeholder='variable' name='list' type='checkbox' value='document')
-          
-    .mn-layout-container
-      h3.align-center radio type
-      .mn-layout-column.mn-layout-sm-row
-        mn-option.flex(placeholder='Stark' name='list3' type='radio' value='stark' checked)
-        mn-option.flex(placeholder='Targaryen' name='list3' type='radio' value='targaryen')
-        mn-option.flex(placeholder='Baratheon' name='list3' type='radio' value='baratheon')
-        mn-option.flex(placeholder='Lannister' name='list3' type='radio' value='lannister')
+      @media (min-width: 600px) {
+        .demo .mn-layout-container > div {
+          width: 80%;
+        }
+      }
 
-      h3.align-center checkbox type
-      .mn-layout-column.mn-layout-sm-row
-        mn-option.flex(placeholder='Ned' name='list4' type='checkbox' value='ned')
-        mn-option.flex(placeholder='Daenerys' name='list4' type='checkbox' value='daenerys' checked)
-        mn-option.flex(placeholder='Robert' name='list4' type='checkbox' value='robert')
-        mn-option.flex(placeholder='Cersei' name='list4' type='checkbox' value='cersei' checked)
-      
-      
-      h3.align-center natural checkbox type
-      .mn-layout-column.mn-layout-sm-row
-        mn-option.natural.flex(placeholder='Ned' name='list' type='checkbox' value='ned')
-        mn-option.natural.flex(placeholder='Daenerys' name='list' type='checkbox' value='daenerys' checked)
-        mn-option.natural.flex(placeholder='Robert' name='list' type='checkbox' value='robert' checked)
-        mn-option.natural.flex(placeholder='Cersei' name='list' type='checkbox' value='cersei')
+      .demo h3 {
+        margin-top: 7em;
+        padding-bottom: .5em;
+        color: #868e96;
+      }
 
-      h3.align-center natural radio type
-      .mn-layout-column.mn-layout-sm-row
-        mn-option.natural.flex(placeholder='Ned' name='list2' type='radio' value="ned")
-        mn-option.natural.flex(placeholder='Daenerys' name='list2' type='radio' value="daenerys" checked)
-        mn-option.natural.flex(placeholder='Robert' name='list2' type='radio' value="robert")
-        mn-option.natural.flex(placeholder='Cersei' name='list2' type='radio' value="cersei")
+  body
+    h2 mn-option
+    include github-corner
 
-  .docs.mn-layout-container
-    mn-code.sh.
-      # not available yet, work in progress
-      npm install --save mn-option
+    form.demo.mn-layout-fullscreen.mn-layout-centered
+      h3.align-center tests
+      div(style='text-align: center; width: 100%')
+        mn-option.natural.flex(value='string 1' checked)
+        mn-option.natural.flex(value='string 2' checked)
 
-    p And bundle dependencies and main files in <strong>dist/</strong> with your preferred tool.
+      //- .mn-layout-container
+        h3.align-center checkbox with different values
+        //- .mn-layout-column.mn-layout-sm-row(style='flex-wrap: wrap')
+        div(style='text-align: center')
+          mn-option.natural.flex(placeholder='string' name='list' type='checkbox' value='test5' checked)
+          mn-option.natural.flex(placeholder='object' name='list' type='checkbox' value='{name: "lannister"}')
+          mn-option.natural.flex(placeholder='number' name='list' type='checkbox' value='5')
+          mn-option.natural.flex(placeholder='true' name='list' type='checkbox' value='true')
+          mn-option.natural.flex(placeholder='false' name='list' type='checkbox' value='false')
+          mn-option.natural.flex(placeholder='array' name='list' type='checkbox' value='["test", 5]')
+          mn-option.natural.flex(name='list' type='checkbox' value='["test", 5, {name: "test"}, name: "test"]')
+          mn-option.natural.flex(placeholder='mixed' name='list' type='checkbox' value='["test", 5, {name: "test"}, name: "test"]')
+          mn-option.natural.flex(placeholder='variable' name='list' type='checkbox' value='document')
+            
+      //- .mn-layout-container
+        h3.align-center radio type
+        .mn-layout-column.mn-layout-sm-row
+          mn-option.flex(placeholder='Stark' name='list' type='radio' value='stark' checked)
+          mn-option.flex(placeholder='Targaryen' name='list' type='radio' value='targaryen')
+          mn-option.flex(placeholder='Baratheon' name='list' type='radio' value='baratheon')
+          mn-option.flex(placeholder='Lannister' name='list' type='radio' value='lannister')
 
-    h3 Usage
-    p in your html, you can use the tag <strong class="tag">mn-option</strong> e.g.
-    mn-code.html.
-      <!-- checkboxes -->
-      <mn-option placeholder="Stark" name="gender"></mn-option>
-      <mn-option placeholder="Lannister" name="gender"></mn-option>
-      <mn-option placeholder="Targaryen" name="gender"></mn-option>
+        h3.align-center checkbox type
+        .mn-layout-column.mn-layout-sm-row
+          mn-option.flex(placeholder='Ned' name='list2' type='checkbox' value='ned')
+          mn-option.flex(placeholder='Daenerys' name='list2' type='checkbox' value='daenerys' checked)
+          mn-option.flex(placeholder='Robert' name='list2' type='checkbox' value='robert')
+          mn-option.flex(placeholder='Cersei' name='list2' type='checkbox' value='cersei' checked)
+        
+        
+        h3.align-center natural checkbox type
+        .mn-layout-column.mn-layout-sm-row
+          mn-option.natural.flex(placeholder='Ned' name='list3' type='checkbox' value='ned')
+          mn-option.natural.flex(placeholder='Daenerys' name='list3' type='checkbox' value='daenerys' checked)
+          mn-option.natural.flex(placeholder='Robert' name='list3' type='checkbox' value='robert' checked)
+          mn-option.natural.flex(placeholder='Cersei' name='list3' type='checkbox' value='cersei')
 
-    p To define as radio, use the attribute <strong>type</strong>
-    mn-code.html.
-      <!-- radios -->
-      <mn-option placeholder="Female" name="gender" type="radio"></mn-option>
-      <mn-option placeholder="Male" name="gender" type="radio"></mn-option>
+        h3.align-center natural radio type
+        .mn-layout-column.mn-layout-sm-row
+          mn-option.natural.flex(placeholder='Ned' name='list4' type='radio' value="ned")
+          mn-option.natural.flex(placeholder='Daenerys' name='list4' type='radio' value="daenerys" checked)
+          mn-option.natural.flex(placeholder='Robert' name='list4' type='radio' value="robert")
+          mn-option.natural.flex(placeholder='Cersei' name='list4' type='radio' value="cersei")
 
-    h3 Custom attributes
+    .docs.mn-layout-container
+      mn-code.sh.
+        # not available yet, work in progress
+        npm install --save mn-option
 
-    p - placeholder - custom attribute, to define the text visible
-    p - type (only checkbox and radio)
+      p And bundle dependencies and main files in <strong>dist/</strong> with your preferred tool.
 
-    h3 Natural checkbox or radio
-    p Is just a css class, to define a minimal design. Useful in some cases. E.g.
+      h3 Usage
+      p in your html, you can use the tag <strong class="tag">mn-option</strong> e.g.
+      mn-code.html.
+        <!-- checkboxes -->
+        <mn-option placeholder="Stark" name="gender"></mn-option>
+        <mn-option placeholder="Lannister" name="gender"></mn-option>
+        <mn-option placeholder="Targaryen" name="gender"></mn-option>
 
-    mn-code.html.
-      <!-- checkboxes, but if you want radio, just implement the type attribute with radio value -->
-      <mn-option class="natural" placeholder="Stark" name="gender"></mn-option>
-      <mn-option class="natural" placeholder="Lannister" name="gender"></mn-option>
-      <mn-option class="natural" placeholder="Targaryen" name="gender"></mn-option>
+      p To define as radio, use the attribute <strong>type</strong>
+      mn-code.html.
+        <!-- radios -->
+        <mn-option placeholder="Female" name="gender" type="radio"></mn-option>
+        <mn-option placeholder="Male" name="gender" type="radio"></mn-option>
 
-    p The following attributes from input type radio are supported in this component, <em>autofocus</em>, <em>checked</em>, <em>disabled</em>, <em>name</em>, <em>required</em>, <em>value</em> and <em>id</em>.
+      h3 Custom attributes
 
-    p Too works with a separted <strong>label</strong> with an attribute <strong>for</strong>.
+      p - placeholder - custom attribute, to define the text visible
+      p - type (only checkbox and radio)
+
+      h3 Natural checkbox or radio
+      p Is just a css class, to define a minimal design. Useful in some cases. E.g.
+
+      mn-code.html.
+        <!-- checkboxes, but if you want radio, just implement the type attribute with radio value -->
+        <mn-option class="natural" placeholder="Stark" name="gender"></mn-option>
+        <mn-option class="natural" placeholder="Lannister" name="gender"></mn-option>
+        <mn-option class="natural" placeholder="Targaryen" name="gender"></mn-option>
+
+      p The following attributes from input type radio are supported in this component, <em>autofocus</em>, <em>checked</em>, <em>disabled</em>, <em>name</em>, <em>required</em>, <em>value</em> and <em>id</em>.
+
+      p Too works with a separted <strong>label</strong> with an attribute <strong>for</strong>.
 
 
 
-  block scripts
-    script(src='docs/vendor.js')
-    script(src='dist/mn-option.js')
-    script.
-      var list = document.querySelector('mn-option[name="list"]')
-      //- list.value = 'cersei'
-      var list2 = document.querySelector('mn-option[name="list2"]')
-      var list3 = document.querySelector('mn-option[name="list3"]')
-      var list4 = document.querySelector('mn-option[name="list4"]')
+    block scripts
+      script(src='docs/vendor.js')
+      script(src='dist/mn-option.js')
+      script.
+        var option = document.querySelector('mn-option')
+        //- option.setAttribute('name', 'list')
+        var list = document.querySelector('mn-option[name="list"]')
+        //- list.value = 'targaryen'
+        var list2 = document.querySelector('mn-option[name="list2"]')
+        var list3 = document.querySelector('mn-option[name="list3"]')
+        var list4 = document.querySelector('mn-option[name="list4"]')
 

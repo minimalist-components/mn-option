@@ -57,8 +57,6 @@ mn-option {
     input:disabled {
       & + .background {
         background-color: $oc-gray-4;
-        // transform: translate(-50%, -50%) scale(1);
-        // opacity: 1;
       }
     }
 
