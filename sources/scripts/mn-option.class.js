@@ -53,6 +53,7 @@ class MnOption extends HTMLElement {
       input.blur()
     })
 
+    // custom input
     const type = this.getAttribute('type')
     const isNatural = this.classList.contains('natural')
     if (type && !isNatural) {
@@ -87,6 +88,12 @@ class MnOption extends HTMLElement {
       background.classList.add('background')
       label.appendChild(background)
     }
+
+    // placeholder text
+    const placeholderText = document.createElement('span')
+    placeholderText.classList.add('text')
+    placeholderText.textContent = this.getAttribute('placeholder') || this.getAttribute('value')
+    label.appendChild(placeholderText)
 
     if (input.checked) {
       this.classList.add('checked')
