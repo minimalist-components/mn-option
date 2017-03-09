@@ -209,6 +209,7 @@ function parsed(value) {
       && !value.startsWith('`')
       && value !== 'true'
       && value !== 'false'
+      && isNaN(value)
 
     return isVariable
         ? eval(`'${value}'`) // convert to string
