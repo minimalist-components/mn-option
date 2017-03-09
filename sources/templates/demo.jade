@@ -37,8 +37,8 @@ html
     include github-corner
 
     form.demo.mn-layout-fullscreen.mn-layout-centered
-      h3.align-center tests
-      div(style='text-align: center; width: 100%')
+      //- h3.align-center tests
+      //- div(style='text-align: center; width: 100%')
         mn-option.natural.flex(value='string 1' checked)
         mn-option.natural.flex(value='string 2' checked)
 
@@ -56,7 +56,7 @@ html
           mn-option.natural.flex(placeholder='mixed' name='list' type='checkbox' value='["test", 5, {name: "test"}, name: "test"]')
           mn-option.natural.flex(placeholder='variable' name='list' type='checkbox' value='document')
             
-      //- .mn-layout-container
+      .mn-layout-container
         h3.align-center radio type
         .mn-layout-column.mn-layout-sm-row
           mn-option.flex(placeholder='Stark' name='list' type='radio' value='stark' checked)
@@ -131,10 +131,8 @@ html
       script(src='docs/vendor.js')
       script(src='dist/mn-option.js')
       script.
-        var option = document.querySelector('mn-option')
-        //- option.setAttribute('name', 'list')
+        //- var option = document.querySelector('mn-option')
         var list = document.querySelector('mn-option[name="list"]')
-        //- list.value = 'targaryen'
         var list2 = document.querySelector('mn-option[name="list2"]')
         var list3 = document.querySelector('mn-option[name="list3"]')
         var list4 = document.querySelector('mn-option[name="list4"]')
