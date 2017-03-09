@@ -7,6 +7,12 @@ mn-option {
     pointer-events: none;
     z-index: 10;
     position: relative;
+    display: block;
+    margin: 0 auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: 0 1em;
   }
 
   &[type='radio']:not(.natural):after,
