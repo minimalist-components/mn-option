@@ -111,13 +111,11 @@ class MnOption extends HTMLElement {
       input.checked
         ? this.classList.add('checked')
         : this.classList.remove('checked')
+
+      element.value = element.value
     })
 
     element.appendChild(label)
-
-    input.addEventListener('click', event => {
-      event.stopPropagation()
-    })
 
     return self
 
