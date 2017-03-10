@@ -114,7 +114,10 @@ class MnOption extends HTMLElement {
     })
 
     element.appendChild(label)
-    // this.setFormGetter()
+
+    input.addEventListener('click', event => {
+      event.stopPropagation()
+    })
 
     return self
 
