@@ -178,7 +178,7 @@ class MnOption extends HTMLElement {
       const option = form.querySelector(`mn-option${name}[value="${value}"]`)
       if (option) {
         option.checked = true
-      } else {
+      } else if (value) {
         console.error(`${value} is a invalid value to mn-option${name}`)
       }
     } else {
@@ -187,7 +187,7 @@ class MnOption extends HTMLElement {
           const option = form.querySelector(`mn-option${name}[value="${value}"]`)
           if (option) {
             option.checked = true
-          } else {
+          } else if (value) {
             console.error(`${value} is a invalid value to mn-option${name}`)
           }
         })
