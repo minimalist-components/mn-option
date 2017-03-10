@@ -138,7 +138,7 @@ class MnOption extends HTMLElement {
   }
 
   get value() {
-    const form = this.closest('form')
+    const form = this.closest('form') || document
     const name = this.getAttribute('name')
       ? `[name="${this.getAttribute('name')}"]`
       : ':not([name])'
@@ -157,7 +157,7 @@ class MnOption extends HTMLElement {
   }
 
   set value(value) {
-    const form = this.closest('form')
+    const form = this.closest('form') || document
     const name = this.getAttribute('name')
       ? `[name="${this.getAttribute('name')}"]`
       : ':not([name])'
