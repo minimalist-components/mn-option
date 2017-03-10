@@ -140,7 +140,7 @@ class MnOption extends HTMLElement {
   get value() {
     const form = this.closest('form')
     const name = this.getAttribute('name')
-      ? `[name="${name}"]`
+      ? `[name="${this.getAttribute('name')}"]`
       : ':not([name])'
     const options = form.querySelectorAll(`mn-option${name}`)
     const type = this.getAttribute('type')
@@ -159,7 +159,9 @@ class MnOption extends HTMLElement {
   set value(value) {
     const form = this.closest('form')
     const name = this.getAttribute('name')
-    const options = form.querySelectorAll(`mn-option[name="${name}"]`)
+      ? `[name="${this.getAttribute('name')}"]`
+      : ':not([name])'
+    const options = form.querySelectorAll(`mn-option${name}`)
     const type = options[0].getAttribute('type')
     const values = Array.isArray(value)
       ? value
@@ -173,20 +175,20 @@ class MnOption extends HTMLElement {
 
     if (type === 'radio') {
       const value = values[0]
-      const option = form.querySelector(`mn-option[name="${name}"][value="${value}"]`)
+      const option = form.querySelector(`mn-option${name}[value="${value}"]`)
       if (option) {
         option.checked = true
       } else {
-        console.error(`${value} is a invalid value to mn-option[name="${name}"]`)
+        console.error(`${value} is a invalid value to mn-option${name}`)
       }
     } else {
       values
         .forEach(value => {
-          const option = form.querySelector(`mn-option[name="${name}"][value="${value}"]`)
+          const option = form.querySelector(`mn-option${name}[value="${value}"]`)
           if (option) {
             option.checked = true
           } else {
-            console.error(`${value} is a invalid value to mn-option[name="${name}"]`)
+            console.error(`${value} is a invalid value to mn-option${name}`)
           }
         })
     }
