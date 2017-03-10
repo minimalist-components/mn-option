@@ -15,7 +15,6 @@ See the [demo](https://minimalist-components.github.io/mn-option/)
 ### Install
 
 ```sh
-# not available yet, work in progress
 npm install --save mn-option
 ```
 
