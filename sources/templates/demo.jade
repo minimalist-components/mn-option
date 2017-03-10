@@ -59,28 +59,28 @@ html
       .mn-layout-container
         h3.align-center radio type
         .mn-layout-column.mn-layout-sm-row
-          mn-option.flex(placeholder='Stark' name='list' type='radio' value='stark' checked)
-          mn-option.flex(placeholder='Targaryen' name='list' type='radio' value='targaryen')
-          mn-option.flex(placeholder='Baratheon' name='list' type='radio' value='baratheon')
-          mn-option.flex(placeholder='Lannister' name='list' type='radio' value='lannister')
+          mn-option.flex(placeholder='Stark' type='radio' value='stark' checked)
+          mn-option.flex(placeholder='Targaryen' type='radio' value='targaryen')
+          mn-option.flex(placeholder='Baratheon' type='radio' value='baratheon')
+          mn-option.flex(placeholder='Lannister' type='radio' value='lannister')
 
-        h3.align-center checkbox type
-        .mn-layout-column.mn-layout-sm-row
+        //- h3.align-center checkbox type
+        //- .mn-layout-column.mn-layout-sm-row
           mn-option.flex(placeholder='Ned' name='list2' type='checkbox' value='ned')
           mn-option.flex(placeholder='Daenerys' name='list2' type='checkbox' value='daenerys' checked)
           mn-option.flex(placeholder='Robert' name='list2' type='checkbox' value='robert')
           mn-option.flex(placeholder='Cersei' name='list2' type='checkbox' value='cersei' checked)
         
         
-        h3.align-center natural checkbox type
-        .mn-layout-column.mn-layout-sm-row
+        //- h3.align-center natural checkbox type
+        //- .mn-layout-column.mn-layout-sm-row
           mn-option.natural.flex(placeholder='Ned' name='list3' type='checkbox' value='ned')
           mn-option.natural.flex(placeholder='Daenerys' name='list3' type='checkbox' value='daenerys' checked)
           mn-option.natural.flex(placeholder='Robert' name='list3' type='checkbox' value='robert' checked)
           mn-option.natural.flex(placeholder='Cersei' name='list3' type='checkbox' value='cersei')
 
-        h3.align-center natural radio type
-        .mn-layout-column.mn-layout-sm-row
+        //- h3.align-center natural radio type
+        //- .mn-layout-column.mn-layout-sm-row
           mn-option.natural.flex(placeholder='Ned' name='list4' type='radio' value="ned")
           mn-option.natural.flex(placeholder='Daenerys' name='list4' type='radio' value="daenerys" checked)
           mn-option.natural.flex(placeholder='Robert' name='list4' type='radio' value="robert")
@@ -139,10 +139,11 @@ html
         //- Array
         //-   .from(document.querySelectorAll('mn-option'))
         //-   .forEach(function(option) {
-        //-     option
-        //-       .querySelector('input')
-        //-       .addEventListener('change', function(event) {
-        //-         console.log('receive change', this.closest('mn-option').value)
-        //-       })
-        //-   })
+            //- option.setAttribute('name', 'list')
+            //- option
+            //-   .querySelector('input')
+            //-   .addEventListener('change', function(event) {
+            //-     console.log('receive change', this.closest('mn-option').value)
+            //-   })
+          //- })
 
