@@ -1,6 +1,6 @@
 {
   "name": "mn-option",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "a checkbox and radio component",
   "main": "dist/mn-option.js",
   "files": [
