@@ -12,7 +12,13 @@
     "bundle": "scripts/bundle.sh",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "keywords": [
+    "checkbox",
+    "radio",
+    "component",
+    "webcomponent",
+    "minimalist"
+  ],
   "author": "Darlan Mendonça <darlanmendonca@gmail.com>",
   "license": "MIT",
   "devDependencies": {
