@@ -7,6 +7,7 @@
     "dist"
   ],
   "scripts": {
+    "postinstall": "npm run bundle",
     "start": "scripts/start.sh",
     "bundle": "scripts/bundle.sh",
     "test": "echo \"Error: no test specified\" && exit 1"
