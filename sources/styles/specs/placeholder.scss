@@ -10,6 +10,7 @@ mn-option {
     padding: 0 1em;
     text-align: center;
     display: inline-block;
+    user-select: none;
   }
 
   &[disabled] {
