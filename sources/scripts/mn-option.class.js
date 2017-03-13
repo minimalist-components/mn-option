@@ -9,6 +9,18 @@ class MnOption extends HTMLElement {
         : ''
 
       console.error(`missing value in mn-option${name}`)
+    } else {
+      const parsedValue = parsed(this.getAttribute('value'))
+
+      if (isObject(parsedValue)) {
+        this.setAttribute('value', JSON.stringify(parsedValue))
+      }
+    }
+
+    function isObject(obj) {
+      return obj !== null
+        && typeof obj === 'object'
+        && !Array.isArray(obj)
     }
 
     const inputAttributes = [
@@ -179,27 +191,29 @@ class MnOption extends HTMLElement {
 
     if (type === 'radio') {
       const value = values[0]
-      const stringValue = typeof value === 'string'
+      const stringifiedValue = typeof value === 'string'
         ? value.replace(/"/g, '\\"')
-        : value
+        : JSON.stringify(value).replace(/"/g, '\\"')
 
-      const option = form.querySelector(`mn-option${name}[value="${stringValue}"]`)
+      // console.log('try', `mn-option${name}[value="${stringifiedValue}"]`)
+      const option = form.querySelector(`mn-option${name}[value="${stringifiedValue}"]`)
       if (option) {
         option.checked = true
       } else if (value) {
-        console.error(`${value} is a invalid value to mn-option${name}`)
+        console.error(`${JSON.stringify(value)} is a invalid value to mn-option${name}`)
       }
     } else {
       values
         .forEach(value => {
-          const stringValue = typeof value === 'string'
+          const stringifiedValue = typeof value === 'string'
             ? value.replace(/"/g, '\\"')
-            : value
-          const option = form.querySelector(`mn-option${name}[value="${stringValue}"]`)
+            : JSON.stringify(value).replace(/"/g, '\\"')
+
+          const option = form.querySelector(`mn-option${name}[value="${stringifiedValue}"]`)
           if (option) {
             option.checked = true
           } else if (value) {
-            console.error(`${value} is a invalid value to mn-option${name}`)
+            console.error(`${JSON.stringify(value)} is a invalid value to mn-option${name}`)
           }
         })
     }
