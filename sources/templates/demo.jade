@@ -37,12 +37,12 @@ html
     include github-corner
 
     .demo.mn-layout-fullscreen.mn-layout-centered
-      .mn-layout-container
-        h3.align-center object value
-        .mn-layout-column.mn-layout-sm-row
+      //- .mn-layout-container
+      //-   h3.align-center object value
+      //-   .mn-layout-column.mn-layout-sm-row
           mn-option.flex(placeholder='obj' name='test' type='radio' value='{id: 1, name: "darlan"}')
 
-      //- .mn-layout-container
+      .mn-layout-container
         h3.align-center radio type
         .mn-layout-column.mn-layout-sm-row
           mn-option.flex(placeholder='Stark' name='list' type='radio' value='stark' checked)
@@ -72,7 +72,7 @@ html
           mn-option.natural.flex(placeholder='Robert' name='list4' type='radio' value="robert")
           mn-option.natural.flex(placeholder='Cersei' name='list4' type='radio' value="cersei")
 
-    //- .docs.mn-layout-container
+    .docs.mn-layout-container
       mn-code.sh.
         npm install --save mn-option
 

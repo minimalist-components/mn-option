@@ -10,17 +10,11 @@ class MnOption extends HTMLElement {
 
       console.error(`missing value in mn-option${name}`)
     } else {
-      const parsedValue = parsed(this.getAttribute('value'))
+      const evaluatedValue = evaluated(this.getAttribute('value'))
 
-      if (isObject(parsedValue)) {
-        this.setAttribute('value', JSON.stringify(parsedValue))
+      if (isObject(evaluatedValue)) {
+        this.setAttribute('value', JSON.stringify(evaluatedValue))
       }
-    }
-
-    function isObject(obj) {
-      return obj !== null
-        && typeof obj === 'object'
-        && !Array.isArray(obj)
     }
 
     const inputAttributes = [
@@ -159,11 +153,11 @@ class MnOption extends HTMLElement {
       .from(options)
       .map(item => item.querySelector('input'))
       .filter(item => item.checked)
-      .map(item => parsed(item.value))
+      .map(item => evaluated(item.value))
 
     const isRadio = type === 'radio'
     const isSingleOption = options.length === 1
-    const isBoolean = typeof parsed(options[0].getAttribute('value')) === 'boolean'
+    const isBoolean = typeof evaluated(options[0].getAttribute('value')) === 'boolean'
 
     return isRadio || (isSingleOption && isBoolean)
       ? isSingleOption && isBoolean
@@ -199,8 +193,8 @@ class MnOption extends HTMLElement {
       const option = form.querySelector(`mn-option${name}[value="${stringifiedValue}"]`)
       if (option) {
         option.checked = true
-      } else if (value) {
-        console.error(`${JSON.stringify(value)} is a invalid value to mn-option${name}`)
+      } else {
+        setById(value)
       }
     } else {
       values
@@ -212,10 +206,44 @@ class MnOption extends HTMLElement {
           const option = form.querySelector(`mn-option${name}[value="${stringifiedValue}"]`)
           if (option) {
             option.checked = true
-          } else if (value) {
+          } else {
+            setById(value)
             console.error(`${JSON.stringify(value)} is a invalid value to mn-option${name}`)
           }
         })
+    }
+
+    function setById(value) {
+      value = evaluated(value)
+      try {
+        let options = form.querySelectorAll(`mn-option${name}`)
+        // let mnOption =
+
+        options = Array
+          .from(options)
+          .filter(option => {
+            const evaluatedValue = evaluated(option.getAttribute('value'))
+            const id = value.id || value._id
+            const idEqual = id
+              && (
+                id === evaluatedValue.id
+                || id === evaluatedValue._id
+              )
+
+            return idEqual
+          })
+
+        if (options.length) {
+          options[0].classList.add('checked')
+          options[0].querySelector('input').checked = true
+        } else {
+          console.error(`${JSON.stringify(value)} is a invalid value to mn-option${name}`)
+        }
+
+      } catch (e) {
+        console.error(`${JSON.stringify(value)} is a invalid value to mn-option${name}`)
+      }
+      // console.error(`${JSON.stringify(value)} is a invalid value to mn-option${name}`)
     }
   }
 
@@ -236,7 +264,7 @@ class MnOption extends HTMLElement {
   }
 }
 
-function parsed(value) {
+function evaluated(value) {
   try {
     const isVariable = !value.startsWith('[')
       && !value.startsWith('{')
@@ -253,6 +281,12 @@ function parsed(value) {
   } catch (e) {
     return value
   }
+}
+
+function isObject(obj) {
+  return obj !== null
+    && typeof obj === 'object'
+    && !Array.isArray(obj)
 }
 
 window.customElements.define('mn-option', MnOption)
