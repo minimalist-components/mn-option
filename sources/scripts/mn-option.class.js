@@ -149,8 +149,14 @@ class MnOption extends HTMLElement {
       .filter(item => item.checked)
       .map(item => parsed(item.value))
 
-    return type === 'radio' || options.length <= 1
-      ? value[0]
+    const isRadio = type === 'radio'
+    const isSingleOption = options.length === 1
+    const isBoolean = typeof parsed(options[0].getAttribute('value')) === 'boolean'
+
+    return isRadio || (isSingleOption && isBoolean)
+      ? isSingleOption && isBoolean
+        ? Boolean(value[0])
+        : value[0]
       : value
   }
 
