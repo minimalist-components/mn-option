@@ -1,6 +1,6 @@
 {
   "name": "mn-option",
-  "version": "0.0.7",
+  "version": "0.0.9",
   "description": "a checkbox and radio component",
   "main": "dist/mn-option.js",
   "files": [
@@ -11,7 +11,13 @@
     "bundle": "scripts/bundle.sh",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "keywords": [
+    "checkbox",
+    "radio",
+    "component",
+    "webcomponent",
+    "minimalist"
+  ],
   "author": "Darlan Mendonça <darlanmendonca@gmail.com>",
   "license": "MIT",
   "devDependencies": {
