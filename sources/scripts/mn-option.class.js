@@ -183,34 +183,39 @@ class MnOption extends HTMLElement {
         option.checked = false
       })
 
-    if (type === 'radio') {
-      const value = values[0]
-      const stringifiedValue = typeof value === 'string'
-        ? value.replace(/"/g, '\\"')
-        : JSON.stringify(value).replace(/"/g, '\\"')
+    if (value) {
+      if (type === 'radio') {
+        const value = values[0]
+        const stringifiedValue = typeof value === 'string'
+          ? value.replace(/"/g, '\\"')
+          : value
+            ? JSON.stringify(value).replace(/"/g, '\\"')
+            : value
 
-      // console.log('try', `mn-option${name}[value="${stringifiedValue}"]`)
-      const option = form.querySelector(`mn-option${name}[value="${stringifiedValue}"]`)
-      if (option) {
-        option.checked = true
+        // console.log('try', `mn-option${name}[value="${stringifiedValue}"]`)
+        const option = form.querySelector(`mn-option${name}[value="${stringifiedValue}"]`)
+        if (option) {
+          option.checked = true
+        } else {
+          setById(value)
+        }
       } else {
-        setById(value)
-      }
-    } else {
-      values
-        .forEach(value => {
-          const stringifiedValue = typeof value === 'string'
-            ? value.replace(/"/g, '\\"')
-            : JSON.stringify(value).replace(/"/g, '\\"')
+        values
+          .forEach(value => {
+            const stringifiedValue = typeof value === 'string'
+              ? value.replace(/"/g, '\\"')
+              : value
+                ? JSON.stringify(value).replace(/"/g, '\\"')
+                : value
 
-          const option = form.querySelector(`mn-option${name}[value="${stringifiedValue}"]`)
-          if (option) {
-            option.checked = true
-          } else {
-            setById(value)
-            console.error(`${JSON.stringify(value)} is a invalid value to mn-option${name}`)
-          }
-        })
+            const option = form.querySelector(`mn-option${name}[value="${stringifiedValue}"]`)
+            if (option) {
+              option.checked = true
+            } else {
+              setById(value)
+            }
+          })
+      }
     }
 
     function setById(value) {
