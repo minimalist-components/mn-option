@@ -179,7 +179,11 @@ class MnOption extends HTMLElement {
 
     if (type === 'radio') {
       const value = values[0]
-      const option = form.querySelector(`mn-option${name}[value="${value.replace(/"/g, '\\"')}"]`)
+      const stringValue = typeof value === 'string'
+        ? value.replace(/"/g, '\\"')
+        : value
+
+      const option = form.querySelector(`mn-option${name}[value="${stringValue}"]`)
       if (option) {
         option.checked = true
       } else if (value) {
@@ -188,7 +192,10 @@ class MnOption extends HTMLElement {
     } else {
       values
         .forEach(value => {
-          const option = form.querySelector(`mn-option${name}[value="${value.replace(/"/g, '\\"')}"]`)
+          const stringValue = typeof value === 'string'
+            ? value.replace(/"/g, '\\"')
+            : value
+          const option = form.querySelector(`mn-option${name}[value="${stringValue}"]`)
           if (option) {
             option.checked = true
           } else if (value) {

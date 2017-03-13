@@ -66,8 +66,8 @@ html
         .mn-layout-column.mn-layout-sm-row
           mn-option.flex(placeholder='Send value' name='list5' type='checkbox' value='{name: "darlan"}')
 
-      //- .mn-layout-container
-      //-   h3.align-center json string
+      .mn-layout-container
+        h3.align-center json string
         .mn-layout-column.mn-layout-sm-row
           mn-option.flex.natural(placeholder='admin' name='list5' type='checkbox' value='{"id":1,"nome":"ADMINISTRADOR","ativo":true,"permissoes":{}}')
 
@@ -158,7 +158,7 @@ html
         var list5 = document.querySelector('mn-option[name="list5"]')
 
         //- console.log(list5.value)
-        //- list5.value = '{"id":1,"nome":"ADMINISTRADOR","ativo":true,"permissoes":{}}'
+        list5.value = '{"id":1,"nome":"ADMINISTRADOR","ativo":true,"permissoes":{}}'
         //- list5.value = '????????????????????????????????????????????????????????????'
 
         //- Array
