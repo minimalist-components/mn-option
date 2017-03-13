@@ -3,10 +3,6 @@ class MnOption extends HTMLElement {
     self = super(self)
     const element = this
 
-    // if (!this.hasAttribute('name')) {
-    //   console.error('missing name in mn-option')
-    // }
-
     if (!this.hasAttribute('value')) {
       const name = this.hasAttribute('name')
         ? `[name="${this.getAttribute('name')}"]`
