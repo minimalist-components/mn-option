@@ -5,7 +5,7 @@ import {Selector} from 'testcafe'
 
 chai.use(chaiAsPromised)
 
-fixture `mn-option[type="radio"]`
+fixture `type radio`
   .page('http://localhost:8080/docs/demo.html')
 
   test('value is a undefined by default', async page => {
@@ -29,7 +29,7 @@ fixture `mn-option[type="radio"]`
     await expect(lannister.hasClass('checked')).to.eventually.be.true
   })
 
-fixture `mn-option[type="checkbox"]`
+fixture `type checkbox`
   .page('http://localhost:8080/docs/demo.html')
 
   test('value is an array by default', async () => {
