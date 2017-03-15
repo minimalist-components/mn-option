@@ -1,10 +1,13 @@
 import chai from 'chai'
 import {expect} from 'chai'
 import chaiAsPromised from 'chai-as-promised'
+import chaiDom from 'chai-dom'
 import {Selector} from 'testcafe'
 import demo from '../../test/e2e/demo/demo.po.js'
 
-chai.use(chaiAsPromised)
+chai
+  .use(chaiDom)
+  .use(chaiAsPromised)
 
 fixture `type radio`
   .page(demo.url)
@@ -37,7 +40,8 @@ fixture `type checkbox`
     const {checkboxList} = demo.checkbox
 
     await expect(checkboxList.value).to.be.eventually.an('array')
-    await expect(checkboxList.value).to.be.eventually.empty
+    await expect(checkboxList.value).to.have.eventually.lengthOf(0)
+    // await expect(checkboxList.value).to.be.eventually.empty
   })
 
   test('change value by click', async page => {
