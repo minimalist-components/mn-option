@@ -10,14 +10,14 @@ fixture `type radio`
   .page('http://localhost:8080/docs/demo.html')
 
   test('value is a undefined by default', async page => {
-    const radioList = demo.radioList
+    const {radioList} = demo.radio
 
     await expect(radioList.value).to.eventually.be.undefined
     await expect(radioList.hasClass('checked')).to.eventually.be.false
   })
 
   test('change value by click', async page => {
-    const {optionStark, optionLannister} = demo
+    const {optionStark, optionLannister} = demo.radio
 
     await page.click(optionStark.find('label'))
     await expect(optionStark.value).to.eventually.be.equal('stark')
@@ -34,24 +34,24 @@ fixture `type checkbox`
   .page('http://localhost:8080/docs/demo.html')
 
   test('value is an array by default', async () => {
-    const list2 = await Selector('mn-option[name="list2"]')
-    await expect(list2.value).to.eventually.be.an('array')
-    await expect(list2.value).to.eventually.be.empty
+    const {checkboxList} = demo.checkbox
+
+    await expect(checkboxList.value).to.eventually.be.an('array')
+    await expect(checkboxList.value).to.eventually.be.empty
   })
 
   test('change value by click', async page => {
-    const ned = await Selector('mn-option[name="list2"][value="ned"]')
-    const daenerys = await Selector('mn-option[name="list2"][value="daenerys"]')
+    const {optionNed, optionDaenerys} = demo.checkbox
 
-    await page.click(ned.find('label'))
-    await expect(ned.value).to.eventually.deep.equal(['ned'])
-    await expect(ned.hasClass('checked')).to.eventually.be.true
-    await expect(daenerys.hasClass('checked')).to.eventually.be.false
+    await page.click(optionNed.find('label'))
+    await expect(optionNed.value).to.eventually.deep.equal(['ned'])
+    await expect(optionNed.hasClass('checked')).to.eventually.be.true
+    await expect(optionDaenerys.hasClass('checked')).to.eventually.be.false
 
-    await page.click(daenerys.find('label'))
-    await expect(ned.value).to.eventually.deep.equal(['ned', 'daenerys'])
-    await expect(ned.hasClass('checked')).to.eventually.be.true
-    await expect(daenerys.hasClass('checked')).to.eventually.be.true
+    await page.click(optionDaenerys.find('label'))
+    await expect(optionNed.value).to.eventually.deep.equal(['ned', 'daenerys'])
+    await expect(optionNed.hasClass('checked')).to.eventually.be.true
+    await expect(optionDaenerys.hasClass('checked')).to.eventually.be.true
   })
 
 
