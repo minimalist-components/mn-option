@@ -6,7 +6,7 @@ import {Selector} from 'testcafe'
 chai.use(chaiAsPromised)
 
 fixture `undefined values`
-  .page('http://localhost:3000/demo.html')
+  .page('http://localhost:8080/docs/demo.html')
 
 
 test('radio value is undefined', async page => {

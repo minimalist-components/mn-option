@@ -2,4 +2,4 @@
 
 set -e
 
-NODE_ENV="test" ./node_modules/gulp/bin/gulp.js test --silent
+./node_modules/.bin/testcafe chrome ./sources/scripts/*.spec.js --app './node_modules/.bin/http-server . -s'
