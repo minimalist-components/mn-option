@@ -2,6 +2,7 @@ import chai from 'chai'
 import {expect} from 'chai'
 import chaiAsPromised from 'chai-as-promised'
 import {Selector} from 'testcafe'
+import demo from '../../test/e2e/demo/demo.po.js'
 
 chai.use(chaiAsPromised)
 
@@ -9,24 +10,24 @@ fixture `type radio`
   .page('http://localhost:8080/docs/demo.html')
 
   test('value is a undefined by default', async page => {
-    const radio = await Selector('mn-option[name="list"]')
-    await expect(radio.value).to.eventually.be.undefined
-    await expect(radio.hasClass('checked')).to.eventually.be.false
+    const radioList = demo.radioList
+
+    await expect(radioList.value).to.eventually.be.undefined
+    await expect(radioList.hasClass('checked')).to.eventually.be.false
   })
 
   test('change value by click', async page => {
-    const stark = await Selector('mn-option[name="list"][value="stark"]')
-    const lannister = await Selector('mn-option[name="list"][value="lannister"]')
+    const {optionStark, optionLannister} = demo
 
-    await page.click(stark.find('label'))
-    await expect(stark.value).to.eventually.be.equal('stark')
-    await expect(stark.hasClass('checked')).to.eventually.be.true
-    await expect(lannister.hasClass('checked')).to.eventually.be.false
+    await page.click(optionStark.find('label'))
+    await expect(optionStark.value).to.eventually.be.equal('stark')
+    await expect(optionStark.hasClass('checked')).to.eventually.be.true
+    await expect(optionLannister.hasClass('checked')).to.eventually.be.false
 
-    await page.click(lannister.find('label'))
-    await expect(stark.value).to.eventually.be.equal('lannister')
-    await expect(stark.hasClass('checked')).to.eventually.be.false
-    await expect(lannister.hasClass('checked')).to.eventually.be.true
+    await page.click(optionLannister.find('label'))
+    await expect(optionStark.value).to.eventually.be.equal('lannister')
+    await expect(optionStark.hasClass('checked')).to.eventually.be.false
+    await expect(optionLannister.hasClass('checked')).to.eventually.be.true
   })
 
 fixture `type checkbox`
