@@ -8,7 +8,6 @@ chai.use(chaiAsPromised)
 fixture `undefined values`
   .page('http://localhost:8080/docs/demo.html')
 
-
 test('radio value is undefined', async page => {
   const list = await Selector('mn-option[name="list"]')
   await expect(list.value).to.eventually.be.undefined
@@ -20,9 +19,9 @@ test('checkbox value is array', async () => {
   await expect(list2.value).to.eventually.be.empty
 })
 
-test.skip('change value in radio', async () => {
+test('change value in radio', async page => {
   const list = await Selector('mn-option[name="list"]')
-  await page.click(list)
+  await page.click(list.find('label'))
   await expect(list.value).to.eventually.be.equal('stark')
 })
 
