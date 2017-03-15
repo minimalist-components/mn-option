@@ -21,6 +21,12 @@ module.exports = {
     dest: './dist/',
     output: 'mn-option.js',
   },
+  specs: {
+    src: './sources/scripts/*.spec.js',
+    options: {
+      browsers: ['chrome'],
+    },
+  },
   lintScripts: [
     './gulpfile.js',
     './tasks/**/*.js',
