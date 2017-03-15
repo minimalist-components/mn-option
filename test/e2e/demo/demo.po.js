@@ -2,7 +2,8 @@ import {Selector} from 'testcafe'
 
 module.exports = new PageObject()
 
-function PageObject(page) {
+function PageObject() {
+  const url = 'http://localhost:8080/docs/demo.html'
   const radioList = Selector('mn-option[name="list"]')
   const optionStark = Selector('mn-option[name="list"][value="stark"]')
   const optionLannister = Selector('mn-option[name="list"][value="lannister"]')
@@ -24,6 +25,7 @@ function PageObject(page) {
   }
 
   return {
+    url,
     radio,
     checkbox,
   }

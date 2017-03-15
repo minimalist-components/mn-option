@@ -7,7 +7,7 @@ import demo from '../../test/e2e/demo/demo.po.js'
 chai.use(chaiAsPromised)
 
 fixture `type radio`
-  .page('http://localhost:8080/docs/demo.html')
+  .page(demo.url)
 
   test('value is a undefined by default', async page => {
     const {radioList} = demo.radio
@@ -31,7 +31,7 @@ fixture `type radio`
   })
 
 fixture `type checkbox`
-  .page('http://localhost:8080/docs/demo.html')
+  .page(demo.url)
 
   test('value is an array by default', async () => {
     const {checkboxList} = demo.checkbox
