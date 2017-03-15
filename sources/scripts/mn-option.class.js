@@ -10,7 +10,7 @@ class MnOption extends HTMLElement {
 
       console.error(`missing value in mn-option${name}`)
     } else {
-      const evaluatedValue = evaluated(this.getAttribute('value'))
+      const evaluatedValue = evaluate(this.getAttribute('value'))
 
       if (isObject(evaluatedValue)) {
         this.setAttribute('value', JSON.stringify(evaluatedValue))
@@ -153,11 +153,11 @@ class MnOption extends HTMLElement {
       .from(options)
       .map(item => item.querySelector('input'))
       .filter(item => item.checked)
-      .map(item => evaluated(item.value))
+      .map(item => evaluate(item.value))
 
     const isRadio = type === 'radio'
     const isSingleOption = options.length === 1
-    const isBoolean = typeof evaluated(options[0].getAttribute('value')) === 'boolean'
+    const isBoolean = typeof evaluate(options[0].getAttribute('value')) === 'boolean'
 
     return isRadio || (isSingleOption && isBoolean)
       ? isSingleOption && isBoolean
@@ -219,7 +219,7 @@ class MnOption extends HTMLElement {
     }
 
     function setById(value) {
-      value = evaluated(value)
+      value = evaluate(value)
       try {
         let options = form.querySelectorAll(`mn-option${name}`)
         // let mnOption =
@@ -227,7 +227,7 @@ class MnOption extends HTMLElement {
         options = Array
           .from(options)
           .filter(option => {
-            const evaluatedValue = evaluated(option.getAttribute('value'))
+            const evaluatedValue = evaluate(option.getAttribute('value'))
             const id = value.id || value._id
             const idEqual = id
               && (
@@ -269,7 +269,7 @@ class MnOption extends HTMLElement {
   }
 }
 
-function evaluated(value) {
+function evaluate(value) {
   try {
     const isVariable = !value.startsWith('[')
       && !value.startsWith('{')
