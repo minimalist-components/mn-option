@@ -57,6 +57,7 @@
     "package-files": "0.0.6",
     "require-all": "^2.0.0",
     "testcafe": "^0.13.0",
+    "testcafe-browser-provider-browserstack": "^1.0.0",
     "testcafe-browser-provider-nightmare": "0.0.4"
   }
 }
