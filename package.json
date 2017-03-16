@@ -9,6 +9,7 @@
   "scripts": {
     "start": "scripts/start.sh",
     "bundle": "scripts/bundle.sh",
+    "pretest": "scripts/bundle.sh",
     "test": "scripts/test.sh"
   },
   "keywords": [
