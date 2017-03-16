@@ -2,7 +2,6 @@ import chai from 'chai'
 import {expect} from 'chai'
 import chaiAsPromised from 'chai-as-promised'
 import chaiDom from 'chai-dom'
-import {Selector} from 'testcafe'
 import MnOptionPageObject from './mn-option.po.js'
 
 chai
@@ -18,12 +17,12 @@ fixture `type radio`
     radio = new MnOptionPageObject('list', page)
   })
 
-  test('value is a undefined by default', async page => {
+  test('value is a undefined by default', async () => {
     await expect(radio.options.value).to.be.eventually.undefined
     await expect(radio.options.hasClass('checked')).to.be.eventually.false
   })
 
-  test('change value by click', async page => {
+  test('change value by click', async () => {
     await radio.clickOnOptionWithValue('stark')
     await expect(radio.options.value).to.be.eventually.equal('stark')
     await expect(radio.option('stark').hasClass('checked')).to.be.eventually.true
@@ -45,7 +44,7 @@ fixture `type checkbox`
     await expect(checkbox.options.value).to.be.eventually.an('array').lengthOf(0)
   })
 
-  test('change value by click', async page => {
+  test('change value by click', async () => {
     await checkbox.clickOnOptionWithValue('ned')
     await expect(checkbox.options.value).to.deep.eventually.equal(['ned'])
     await expect(checkbox.option('ned').hasClass('checked')).to.be.eventually.true
@@ -56,5 +55,3 @@ fixture `type checkbox`
     await expect(checkbox.option('ned').hasClass('checked')).to.be.eventually.true
     await expect(checkbox.option('daenerys').hasClass('checked')).to.be.eventually.true
   })
-
-

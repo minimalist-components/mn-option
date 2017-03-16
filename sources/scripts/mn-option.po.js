@@ -1,9 +1,9 @@
-import {Selector} from 'testcafe'
+import {Selector as querySelector} from 'testcafe'
 
 module.exports = PageObject
 
 function PageObject(name, page) {
-  const options = Selector(`mn-option[name="${name}"]`)
+  const options = querySelector(`mn-option[name="${name}"]`)
 
   return {
     options,
@@ -13,12 +13,12 @@ function PageObject(name, page) {
   }
 
   function option(value) {
-    const option = Selector(`mn-option[name="${name}"][value="${value}"]`)
+    const option = querySelector(`mn-option[name="${name}"][value="${value}"]`)
     return option
   }
 
   async function clickOnOptionWithValue(value) {
-    const option = await Selector(`mn-option[name="${name}"][value="${value}"]`)
+    const option = await querySelector(`mn-option[name="${name}"][value="${value}"]`)
     await page.click(option.find('label'))
   }
 }
