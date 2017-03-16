@@ -30,4 +30,17 @@ To run tests, just run
 npm test
 ```
 
+By default will run in a headless browser (nightmare).
+If you want run in another, pass a variable `browser` to script, e.g.
+
+```sh
+browser=chrome npm test
+```
+
+or multiples
+
+```sh
+browser=chrome,safari npm test
+```
+
 The specs are located in `./sources/scripts/*.spec.js`.
