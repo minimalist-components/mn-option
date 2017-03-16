@@ -17,6 +17,7 @@ module.exports = {
     src: [
       './sources/**/*.js',
       '!./sources/**/*.spec.js',
+      '!./sources/**/*.po.js',
     ],
     dest: './dist/',
     output: 'mn-option.js',
