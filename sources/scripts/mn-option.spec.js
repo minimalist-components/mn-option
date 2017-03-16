@@ -42,9 +42,7 @@ fixture `type checkbox`
   })
 
   test('value is an array by default', async () => {
-    await expect(checkbox.options.value).to.be.eventually.an('array')
-    await expect(checkbox.options.value).to.have.eventually.lengthOf(0)
-    // await expect(checkboxList.value).to.be.eventually.empty
+    await expect(checkbox.options.value).to.be.eventually.an('array').lengthOf(0)
   })
 
   test('change value by click', async page => {
