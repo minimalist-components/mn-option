@@ -22,7 +22,7 @@ module.exports = {
     output: 'mn-option.js',
   },
   lintScripts: [
-    './gulpfile.js',
+    './*.js',
     './tasks/**/*.js',
     './sources/**/*.js',
   ],
