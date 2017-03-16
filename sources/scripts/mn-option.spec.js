@@ -49,12 +49,12 @@ fixture `type checkbox`
 
   test('change value by click', async page => {
     await checkbox.clickOnOptionWithValue('ned')
-    await expect(checkbox.option('ned').value).to.deep.eventually.equal(['ned'])
+    await expect(checkbox.options.value).to.deep.eventually.equal(['ned'])
     await expect(checkbox.option('ned').hasClass('checked')).to.be.eventually.true
     await expect(checkbox.option('daenerys').hasClass('checked')).to.be.eventually.false
 
     await checkbox.clickOnOptionWithValue('daenerys')
-    await expect(checkbox.option('ned').value).to.deep.eventually.equal(['ned', 'daenerys'])
+    await expect(checkbox.options.value).to.deep.eventually.equal(['ned', 'daenerys'])
     await expect(checkbox.option('ned').hasClass('checked')).to.be.eventually.true
     await expect(checkbox.option('daenerys').hasClass('checked')).to.be.eventually.true
   })
