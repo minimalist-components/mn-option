@@ -10,6 +10,7 @@
     "start": "scripts/start.sh",
     "bundle": "scripts/bundle.sh",
     "lint": "scripts/lint.sh",
+    "pretest": "npm run bundle && npm run lint",
     "test": "scripts/test.sh"
   },
   "keywords": [
