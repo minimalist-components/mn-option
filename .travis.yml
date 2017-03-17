@@ -2,7 +2,7 @@ language: node_js
 node_js:
   - "node"
 env:
-  - browser=browserstack:chrome@56.0:OS X Sierra
+  - browser='browserstack:chrome@56.0'
   # - EXPORT_COVERAGE=1 CXX=g++-4.8
 addons:
   apt:
