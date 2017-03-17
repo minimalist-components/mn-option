@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/minimalist-components/mn-option.svg)](https://travis-ci.org/minimalist-components/mn-option) 
 [![npm version](https://badge.fury.io/js/mn-option.svg)](https://badge.fury.io/js/mn-option)
 [![Dependency Status](https://gemnasium.com/badges/github.com/minimalist-components/mn-option.svg)](https://gemnasium.com/github.com/minimalist-components/mn-option)
 [![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
