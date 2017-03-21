@@ -24,25 +24,29 @@ mn-option {
       z-index: 10;
     }
 
-    input:focus:not(:active):not(:hover) {
+    // input:focus:not(:active):not(:hover) {
+    input:focus:not(:hover) {
       & + .background {
         transform: translate(-50%, -50%) scale(1);
         opacity: 1;
         background-color: $oc-gray-4;
+        box-shadow: 0 0 0 0 $oc-gray-4;
+      }
+
+      &:checked + .background {
+        box-shadow: 0 0 0 .4em $oc-gray-4;
       }
     }
-
-    // &.checked input:focus:not(:active):not(:hover) {
-    //   & + .background {background-color: $oc-gray-6}
-    // }
 
     &.checked {
       .text {color: $oc-gray-1}
     }
 
+    input:checked:focus:not(:hover),
     input:checked {
       & + .background {
         transform: translate(-50%, -50%) scale(1);
+        background-color: $oc-gray-7;
         opacity: 1;
       }
     }
