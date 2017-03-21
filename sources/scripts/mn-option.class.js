@@ -1,6 +1,38 @@
 class MnOption extends HTMLElement {
   constructor(self) {
     self = super(self)
+
+    this.setInput()
+    this.setCustomInput()
+    this.setPlaceholder()
+
+    if (this.input.checked) {
+      this.classList.add('checked')
+    }
+
+    this.input.addEventListener('change', () => {
+      if (this.input.getAttribute('type') === 'radio') {
+        const name = this.input.getAttribute('name')
+        const lastChecked = document.querySelector(`mn-option.checked[name="${name}"]`)
+        if (lastChecked) {
+          lastChecked.classList.remove('checked')
+        }
+      }
+
+      this.input.checked
+        ? this.classList.add('checked')
+        : this.classList.remove('checked')
+
+      // this.value = input.value
+      // console.log('change')
+    })
+
+    this.appendChild(this.label)
+
+    return self
+  }
+
+  setInput() {
     const element = this
 
     if (!this.hasAttribute('value')) {
@@ -44,9 +76,11 @@ class MnOption extends HTMLElement {
     ]
 
     const label = document.createElement('label')
+    this.label = label
 
     // input element
     const input = document.createElement('input')
+    this.input = input
     inputAttributes.map(setInputAttribute)
     this.removeAttribute('id')
     label.appendChild(input)
@@ -55,6 +89,26 @@ class MnOption extends HTMLElement {
       input.blur()
     })
 
+    function setInputAttribute(attribute) {
+      const isDefaultAttribute = attribute.hasOwnProperty('default')
+      const attributeValue = element.getAttribute(attribute.name)
+
+      if (isDefaultAttribute) {
+        const isValidValue = attribute.hasOwnProperty('values')
+          && attribute.values.indexOf(attributeValue) >= 0
+
+        const value = isValidValue
+          ? attributeValue
+          : attribute.default
+
+        input.setAttribute(attribute.name, value)
+      } else if (attributeValue) {
+        input.setAttribute(attribute.name, attributeValue)
+      }
+    }
+  }
+
+  setCustomInput() {
     // custom input
     const type = this.getAttribute('type')
     const isNatural = this.classList.contains('natural')
@@ -62,7 +116,7 @@ class MnOption extends HTMLElement {
       const customInput = document.createElement('div')
       customInput.className = 'input'
       customInput.classList.add(type)
-      label.appendChild(customInput)
+      this.label.appendChild(customInput)
 
       if (type === 'checkbox') {
         const vector = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
@@ -88,57 +142,16 @@ class MnOption extends HTMLElement {
     } else {
       const background = document.createElement('div')
       background.classList.add('background')
-      label.appendChild(background)
+      this.label.appendChild(background)
     }
+  }
 
+  setPlaceholder() {
     // placeholder text
     const placeholderText = document.createElement('span')
     placeholderText.classList.add('text')
     placeholderText.textContent = this.getAttribute('placeholder') || this.getAttribute('value')
-    label.appendChild(placeholderText)
-
-    if (input.checked) {
-      this.classList.add('checked')
-    }
-
-    input.addEventListener('change', () => {
-      if (input.getAttribute('type') === 'radio') {
-        const name = input.getAttribute('name')
-        const lastChecked = document.querySelector(`mn-option.checked[name="${name}"]`)
-        if (lastChecked) {
-          lastChecked.classList.remove('checked')
-        }
-      }
-
-      input.checked
-        ? this.classList.add('checked')
-        : this.classList.remove('checked')
-
-      // element.value = input.value
-      // console.log('change')
-    })
-
-    element.appendChild(label)
-
-    return self
-
-    function setInputAttribute(attribute) {
-      const isDefaultAttribute = attribute.hasOwnProperty('default')
-      const attributeValue = element.getAttribute(attribute.name)
-
-      if (isDefaultAttribute) {
-        const isValidValue = attribute.hasOwnProperty('values')
-          && attribute.values.indexOf(attributeValue) >= 0
-
-        const value = isValidValue
-          ? attributeValue
-          : attribute.default
-
-        input.setAttribute(attribute.name, value)
-      } else if (attributeValue) {
-        input.setAttribute(attribute.name, attributeValue)
-      }
-    }
+    this.label.appendChild(placeholderText)
   }
 
   get value() {
