@@ -22,9 +22,6 @@ class MnOption extends HTMLElement {
       this.input.checked
         ? this.classList.add('checked')
         : this.classList.remove('checked')
-
-      // this.value = input.value
-      // console.log('change')
     })
 
     this.appendChild(this.label)
@@ -66,6 +63,9 @@ class MnOption extends HTMLElement {
       },
       {
         name: 'disabled',
+      },
+      {
+        name: 'readonly',
       },
       {
         name: 'value',
