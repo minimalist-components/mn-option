@@ -25,6 +25,7 @@
     "type": "git",
     "url": "git://github.com/minimalist-components/mn-option.git"
   },
+  "homepage": "https://minimalist-components.github.io/mn-option/",
   "license": "MIT",
   "dependencies": {
     "document-register-element": "^1.4.1",
