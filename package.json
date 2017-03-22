@@ -1,6 +1,6 @@
 {
   "name": "mn-option",
-  "version": "0.0.17",
+  "version": "0.0.18",
   "description": "a checkbox and radio component",
   "main": "dist/mn-option.js",
   "files": [
@@ -21,6 +21,10 @@
     "minimalist"
   ],
   "author": "Darlan Mendonça <darlanmendonca@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/minimalist-components/mn-option.git"
+  },
   "license": "MIT",
   "dependencies": {
     "document-register-element": "^1.4.1",
