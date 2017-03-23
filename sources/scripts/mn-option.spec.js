@@ -11,6 +11,17 @@ chai
 let radio
 let checkbox
 
+fixture.only `dom specs`
+  .page('http://localhost:8080/docs/demo.html')
+
+  test('testing jsdom', async page => {
+    const pageObject = new MnOptionPageObject('list', page)
+    await pageObject.html()
+    // const list = document.querySelector('mn-option[name="list"]')
+    // console.log(list.value)
+    expect(true).to.be.true
+  })
+
 fixture `type radio`
   .page('http://localhost:8080/docs/demo.html')
   .beforeEach(page => {

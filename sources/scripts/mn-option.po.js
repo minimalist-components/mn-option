@@ -1,5 +1,8 @@
 import {Selector as querySelector} from 'testcafe'
 
+import {ClientFunction} from 'testcafe'
+// import {jsdom} from 'jsdom'
+
 module.exports = PageObject
 
 function PageObject(name, page) {
@@ -10,6 +13,16 @@ function PageObject(name, page) {
 
     option,
     clickOnOptionWithValue,
+    html,
+  }
+
+  async function html() {
+    const markup = await ClientFunction(() => document.documentElement)()
+    // global.document = jsdom(markup)
+    console.log(markup)
+    // global.window = document.defaultView
+    return markup
+
   }
 
   function option(value) {
