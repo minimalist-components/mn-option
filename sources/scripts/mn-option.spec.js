@@ -18,7 +18,6 @@ fixture.only `dom specs`
     const pageObject = new MnOptionPageObject('list', page)
     await pageObject.html()
     // const list = document.querySelector('mn-option[name="list"]')
-    // console.log(list.value)
     expect(true).to.be.true
   })
 

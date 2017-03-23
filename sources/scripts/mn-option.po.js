@@ -1,7 +1,7 @@
 import {Selector as querySelector} from 'testcafe'
 
 import {ClientFunction} from 'testcafe'
-// import {jsdom} from 'jsdom'
+import jsdom from 'jsdom'
 
 module.exports = PageObject
 
@@ -17,10 +17,10 @@ function PageObject(name, page) {
   }
 
   async function html() {
-    const markup = await ClientFunction(() => document.documentElement)()
-    // global.document = jsdom(markup)
-    console.log(markup)
-    // global.window = document.defaultView
+    console.log(jsdom.defaultDocumentFeatures)
+    const markup = await ClientFunction(() => document.documentElement.outerHTML)()
+    global.document = jsdom.jsdom(markup)
+    global.window = document.defaultView
     return markup
 
   }
