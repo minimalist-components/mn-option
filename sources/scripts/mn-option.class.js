@@ -1,7 +1,7 @@
 class MnOption extends HTMLElement {
   constructor(self) {
     self = super(self)
-
+    this.classList.add('mn-option')
     this.setInput()
     this.setCustomInput()
     this.setPlaceholder()
@@ -13,7 +13,7 @@ class MnOption extends HTMLElement {
     this.input.addEventListener('change', () => {
       if (this.input.getAttribute('type') === 'radio') {
         const name = this.input.getAttribute('name')
-        const lastChecked = document.querySelector(`mn-option.checked[name="${name}"]`)
+        const lastChecked = document.querySelector(`.mn-option.checked[name="${name}"]`)
         if (lastChecked) {
           lastChecked.classList.remove('checked')
         }
@@ -159,7 +159,7 @@ class MnOption extends HTMLElement {
     const name = this.getAttribute('name')
       ? `[name="${this.getAttribute('name')}"]`
       : ':not([name])'
-    const options = form.querySelectorAll(`mn-option${name}`)
+    const options = form.querySelectorAll(`.mn-option${name}`)
     const type = this.getAttribute('type')
 
     const value = Array
@@ -184,7 +184,7 @@ class MnOption extends HTMLElement {
     const name = this.getAttribute('name')
       ? `[name="${this.getAttribute('name')}"]`
       : ':not([name])'
-    const options = form.querySelectorAll(`mn-option${name}`)
+    const options = form.querySelectorAll(`.mn-option${name}`)
     const type = options[0].getAttribute('type')
     const values = Array.isArray(value)
       ? value
@@ -206,7 +206,7 @@ class MnOption extends HTMLElement {
             : value
 
         // console.log('try', `mn-option${name}[value="${stringifiedValue}"]`)
-        const option = form.querySelector(`mn-option${name}[value="${stringifiedValue}"]`)
+        const option = form.querySelector(`.mn-option${name}[value="${stringifiedValue}"]`)
         if (option) {
           option.checked = true
         } else {
@@ -221,7 +221,7 @@ class MnOption extends HTMLElement {
                 ? JSON.stringify(value).replace(/"/g, '\\"')
                 : value
 
-            const option = form.querySelector(`mn-option${name}[value="${stringifiedValue}"]`)
+            const option = form.querySelector(`.mn-option${name}[value="${stringifiedValue}"]`)
             if (option) {
               option.checked = true
             } else {
@@ -234,7 +234,7 @@ class MnOption extends HTMLElement {
     function setById(value) {
       value = evaluate(value)
       try {
-        let options = form.querySelectorAll(`mn-option${name}`)
+        let options = form.querySelectorAll(`.mn-option${name}`)
         // let mnOption =
 
         options = Array
