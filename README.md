@@ -63,6 +63,7 @@ The following attributes from inputs are supported in this component
 - [autofocus](http://www.w3schools.com/tags/att_input_autofocus.asp)
 - [checked](http://www.w3schools.com/tags/att_input_checked.asp)
 - [disabled](http://www.w3schools.com/tags/att_input_disabled.asp)
+- [readonly](http://www.w3schools.com/tags/att_input_readonly.asp)
 - [name](http://www.w3schools.com/tags/att_input_name.asp)
 - [required](http://www.w3schools.com/tags/att_input_required.asp)
 - [value](http://www.w3schools.com/tags/att_input_value.asp)
